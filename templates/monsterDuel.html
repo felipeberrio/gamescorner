@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Duel</title>
+    <script src="../src/js/monsterDuel.js"></script>
+    <link href="../src/styles/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <h1>Monster Duel 🔥☁️💧🌱</h1>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum expedita earum ducimus amet consequuntur assumenda nihil culpa minima animi vel!
+    </p>
+
+    <p></p>
+
+    <section id="seleccionarMascota">
+        <h2>Elíge tu mascota</h2>
+        <p>MASCOTAS</p>
+
+        <label for="squirtle">Squirtle</label>
+        <input type="radio" name="mascota" id="squirtle"/>
+
+        <label for="bulbasor">Bulbasor</label>
+        <input type="radio" name="mascota" id="bulbasor"/>
+
+        <label for="charmander">Charmander</label>
+        <input type="radio" name="mascota" id="charmander"/>
+
+        <label for="dragonGyradous">Dragon Gyradous</label>
+        <input type="radio" name="mascota" id="dragonGyradous"/>
+
+        <label for="dragonPegassi">Dragon Pegassi</label>
+        <input type="radio" name="mascota" id="dragonPegassi"/>
+
+        <label for="dragonSkull">Dragon Skull</label>
+        <input type="radio" name="mascota" id="dragonSkull"/>
+        
+        
+        <button id="botonMascotas">Seleccionar</button>
+    </section>
+        
+<!--         Squirtle -> Agua
+        Bulbasor -> Tierra
+        Charmander -> Fuego
+        Dragon Gyradous -> Agua y Fuego
+        Dragon Pegassi -> Agua y Tierra
+        Dragon Skull -> Tierra y Fuego
+ -->
+
+
+
+
+
+    <section id="seleccionarAtaque">
+        <h2>Elíge tu ataque</h2>
+        <p>Tu mascota tiene <span>3</span> vidas</p>
+        <p>La mascota del enemigo tiene <span>3</span>  vidas</p>
+        <div>
+            <button id="botonFuego"> Fuego 🔥</button>
+            <button id="botonAgua"> Agua 💧</button>
+            <button id="botonTierra"> Tierra 🌱</button>
+            <button id="botonAire"> Aire ☁️</button>
+        </div>
+    </section>
+
+    <section id="mensajes">
+        <p>Tu mascota atacó con FUEGO, la mascota del enemigo atacó con TIERRA - GANASTE 🍾</p>
+    </section>
+
+    <section id="reinciar">
+        <button id="botonReiniciar">Reinciar</button>
+    </section>
+
+    <div>
+        <button onclick="location.href='../index.html'"> Go Back 🔙 </button>
+    </div>
+    
+</body>
+</html>
