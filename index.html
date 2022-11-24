@@ -5,68 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock - Paper - Scissors</title>
-    <script>
-      function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
-      }
-      function rockpaperscissors() {
-        let user = 0;
-
-        var playerOne = 0;
-        user = prompt("Tell me your name:");
-        alert("Hello " + user);
-        playerOne = prompt(
-          "Choose your option: (1) Rock 🪨 (2) Paper 📄 (3) Scissors ✂️"
-        );
-
-        if (playerOne == 1) {
-          alert("You chose 🪨");
-        } else if (playerOne == 2) {
-          alert("You chose 📄");
-        } else if (playerOne == 3) {
-          alert("You chose ✂️");
-        } else {
-          alert("You chose to Lose");
-        }
-
-        let pcOne = getRandomInt(4);
-
-        if (pcOne == 1) {
-          alert("🖥️ chose 🪨");
-        } else if (pcOne == 2) {
-          alert("🖥️ chose 📄");
-        } else if (pcOne == 3) {
-          alert("🖥️ chose ✂️");
-        } else {
-          alert("You chose to Lose");
-        }
-
-        // Solo necistamos poner atención a las opciones donde ganamos
-        if (playerOne == pcOne) {
-          alert("EMPATADOS");
-          rockpaperscissors();
-        } else if (playerOne == 2 && pcOne == 1) {
-          alert("You Win - 📄 > 🪨");
-        } else if (playerOne == 3 && pcOne == 2) {
-          alert("You Win - ✂️ > 📄 ");
-        } else if (playerOne == 1 && pcOne == 3) {
-          alert("You Win - 🪨 > ✂️");
-        } else {
-          alert("PERDISTE");
-        }
-
-        /* TODO ESTO NOS LO AHORRAMOS CON EL ÚLTIMO ELSE
-            else if(pcOne == 3 && playerOne == 1){
-            alert("You Lose - 📄 < ✂️")
-        } else if(pcOne == 1 && playerOne == 3){
-            alert("You Lose - ✂️ < 🪨")
-        } else if(pcOne == 2 && playerOne == 1){
-            alert("You Lose - 🪨 > 📄")
-        }  */
-      }
-
-      rockpaperscissors();
-    </script>
+    <script src="src/codigo.js"></script>
   </head>
   <body>
     <h1>Rock 🪨, Paper 📄, Scissors ✂️</h1>
@@ -79,5 +18,6 @@
       This is just an easy example of how to use Javascript and Html to ask for
       data
     </p>
+
   </body>
 </html>
