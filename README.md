@@ -1,4 +1,4 @@
-# rockpaperscissors
+# Games Corner
 
 > Ejercicio parte del Nuevo Curso Gratis de Programación Básica de Platzi
 
