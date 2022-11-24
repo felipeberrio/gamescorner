@@ -1,3 +1,69 @@
+let ataqueJugador;
+let ataqueEnemigo;
+
+function iniciarJuego() {
+  // Traemos del DOM -> monsterDuel.html la etiqueta con id "botonMascotas" y la guardamos en una variable que estaremos escuchando el evento click para iniciar la función seleccionarMascotaJugador
+  let botonMascotaJugador = document.getElementById("botonMascotas");
+  botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
+
+  let botonFuegoJugador = document.getElementById("botonFuego");
+  botonFuegoJugador.addEventListener("click", ataqueFuego);
+
+  let botonAguaJugador = document.getElementById("botonAgua");
+  botonAguaJugador.addEventListener("click", ataqueAgua);
+
+  let botonTierraJugador = document.getElementById("botonTierra");
+  botonTierraJugador.addEventListener("click", ataqueTierra);
+}
+
+function ataqueFuego() {
+  ataqueJugador = "Fuego 🔥";
+  ataqueAleatorioEnemigo();
+}
+
+function ataqueAgua() {
+  ataqueJugador = "Agua 💧";
+  ataqueAleatorioEnemigo();
+}
+
+function ataqueTierra() {
+  ataqueJugador = "Tierra 🌱";
+  ataqueAleatorioEnemigo();
+}
+
+function ataqueAleatorioEnemigo() {
+  let ataqueAleatorio = aleatorio(1, 3);
+
+  if (ataqueAleatorio == 1) {
+    // Squirtle
+    ataqueEnemigo = "Agua 💧";
+  } else if (ataqueAleatorio == 2) {
+    // Bulbasor
+    ataqueEnemigo = "Tierra 🌱";
+  } else if (ataqueAleatorio == 3) {
+    // Charmander
+    ataqueEnemigo = "Fuego 🔥";
+  }
+  crearMensaje();
+}
+
+function seleccionarMascotaEnemigo() {
+  // Creamos un numero aleatorio entre el 1 y 3 siendo las 3 opciones aun contempladas en el juego
+  let spanMascotaEnemigo = document.getElementById("mascotaEnemigo");
+  let mascotaAleatorio = aleatorio(1, 3);
+
+  if (mascotaAleatorio == 1) {
+    // Squirtle
+    spanMascotaEnemigo.innerHTML = "Squirtle 🐳";
+  } else if (mascotaAleatorio == 2) {
+    // Bulbasor
+    spanMascotaEnemigo.innerHTML = "Bulbasor 🐊";
+  } else if (mascotaAleatorio == 3) {
+    // Charmander
+    spanMascotaEnemigo.innerHTML = "Charmander 🐯";
+  }
+}
+
 function seleccionarMascotaJugador() {
   let inputSquirtle = document.getElementById("squirtle");
   let inputBulbasor = document.getElementById("bulbasor");
@@ -32,43 +98,23 @@ function seleccionarMascotaJugador() {
   seleccionarMascotaEnemigo();
 }
 
-function seleccionarMascotaEnemigo() {
-    // Creamos un numero aleatorio entre el 1 y 3 siendo las 3 opciones aun contempladas en el juego
-    let spanMascotaEnemigo = document.getElementById("mascotaEnemigo");
-    let ataqueAleatorio = aleatorio(1,3)
-    
+function crearMensaje() {
+  let seccionMensajes = document.getElementById("mensajes");
+  let parrafo = document.createElement("p");
 
-    if (ataqueAleatorio == 1){
-        // Squirtle
-        spanMascotaEnemigo.innerHTML = "Squirtle 🐳";
-    } else if (ataqueAleatorio == 2) {
-        // Bulbasor
-        spanMascotaEnemigo.innerHTML = "Bulbasor 🐊";
-    }else if (ataqueAleatorio == 3) {
-        // Charmander
-        spanMascotaEnemigo.innerHTML = "Charmander 🐯";
-    }
-    
-}
+  parrafo.innerHTML =
+    "Tu mascota atacó con " +
+    ataqueJugador +
+    ", la mascota del enemigo atacó con " +
+    ataqueEnemigo +
+    " - PENDIENTE 🍾";
 
-function iniciarJuego() {
-  // Traemos del DOM -> monsterDuel.html la etiqueta con id "botonMascotas" y la guardamos en una variable que estaremos escuchando el evento click para iniciar la función seleccionarMascotaJugador
-
-  let botonMascotaJugador = document.getElementById("botonMascotas");
-  botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
+  seccionMensajes.appendChild(parrafo)
 }
 
 function aleatorio(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
-let ataquejugador;
-
-function ataqueFuego(){}
-
-function ataqueAgua(){}
-
-function ataqueTierra(){}
 
 // Cuando termine de cargar toda la página iniciar la función iniciarJuego
 window.addEventListener("load", iniciarJuego);
