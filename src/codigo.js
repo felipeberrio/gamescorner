@@ -58,3 +58,11 @@ function getRandomInt(min, max) {
     }
   }
 
+
+// Refrescar la página
+
+
+let refresh = document.getElementById('refresh');
+refresh.addEventListener('click', _ => {
+            location.reload();
+})
