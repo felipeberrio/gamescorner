@@ -11,12 +11,12 @@
       }
       function rockpaperscissors() {
         let user = 0;
-        let pcOne = getRandomInt(4);
-        let playerOne = 0;
+
+        var playerOne = 0;
         user = prompt("Tell me your name:");
         alert("Hello " + user);
         playerOne = prompt(
-          "Choose your option: (1) Rock (2) Paper (3) Scissors"
+          "Choose your option: (1) Rock 🪨 (2) Paper 📄 (3) Scissors ✂️"
         );
 
         if (playerOne == 1) {
@@ -28,6 +28,9 @@
         } else {
           alert("You chose to Lose");
         }
+
+        let pcOne = getRandomInt(4);
+
         if (pcOne == 1) {
           alert("🖥️ chose 🪨");
         } else if (pcOne == 2) {
@@ -42,11 +45,11 @@
         if (playerOne == pcOne) {
           alert("EMPATADOS");
           rockpaperscissors();
-        } else if (pcOne == 1 && playerOne == 2) {
+        } else if (playerOne == 2 && pcOne == 1) {
           alert("You Win - 📄 > 🪨");
-        } else if (pcOne == 2 && playerOne == 3) {
-          alert("You Win - ✂️ < 📄");
-        } else if (pcOne == 3 && playerOne == 1) {
+        } else if (playerOne == 3 && pcOne == 2) {
+          alert("You Win - ✂️ > 📄 ");
+        } else if (playerOne == 1 && pcOne == 3) {
           alert("You Win - 🪨 > ✂️");
         } else {
           alert("PERDISTE");
