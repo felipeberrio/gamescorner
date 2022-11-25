@@ -10,6 +10,15 @@ let vidasEnemigo; // Conteo vidas enemigo
 // Aca tenemos el código de los botones del juego, sus escuchadores
 
 function iniciarJuego() {
+
+  // LLamamos la sección de ataque y con el atributo de style dysplay lo dejamos en none para cambiar su predeterminado de mostrarse
+  let divBatlla = document.getElementById("seleccionarAtaque");
+  divBatlla.style.display = 'none';
+
+
+  let sectionReiniciar = document.getElementById("sectionReiniciar");
+  sectionReiniciar.style.display = 'none';
+
   // Traemos del DOM -> monsterDuel.html la etiqueta con id "botonMascotas" y la guardamos en una variable que estaremos escuchando el evento click para iniciar la función seleccionarMascotaJugador
   let botonMascotaJugador = document.getElementById("botonMascotas");
   botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
@@ -28,6 +37,10 @@ function iniciarJuego() {
 
   let botonAireJugador = document.getElementById("botonAire");
   botonAireJugador.addEventListener("click", ataqueAire);
+
+  let botonReiniciar = document.getElementById("botonReiniciar");
+  botonReiniciar.addEventListener("click", reiniciarJuego);
+
 }
 
 function seleccionarMascotaJugador() {
@@ -67,6 +80,12 @@ function seleccionarMascotaJugador() {
   } else {
     alert("Selecciona una mascota");
   }
+
+  let divMascota = document.getElementById("seleccionarMascota");
+  divMascota.style.display = 'none';
+
+  let divBatlla = document.getElementById("seleccionarAtaque");
+  divBatlla.style.display = 'block';
 
   seleccionarMascotaEnemigo();
 }
@@ -157,8 +176,8 @@ function seleccionarMascotaEnemigo() {
   // Creamos un numero aleatorio entre el 1 y 3 siendo las 3 opciones aun contempladas en el juego
   let spanMascotaEnemigo = document.getElementById("mascotaEnemigo");
   let spanvidaEnemigo = document.getElementById("vidaEnemigo");
-  let mascotaAleatorio = aleatorio(1, 5);
-
+  let mascotaAleatorio = aleatorio(1, 6);
+ // Verificamos la eleccion al azar de la mascota del enemigo y con el atributo innerHTML vamos a remplazar el contenido de ese objeto por lo que le pasemos
   if (mascotaAleatorio == 1) {
     vidasEnemigo = 8;
     spanvidaEnemigo.innerHTML = vidasEnemigo;
@@ -170,16 +189,16 @@ function seleccionarMascotaEnemigo() {
   } else if (mascotaAleatorio == 3) {
     vidasEnemigo = 4;
     spanvidaEnemigo.innerHTML = vidasEnemigo;
-    spanMascotaEnemigo.innerHTML = "Charmander 🐯";
-  } else if (inputDragonGyradous.checked) {
+    spanMascotaEnemigo.innerHTML = "Charmander 🐯"; 
+  } else if (mascotaAleatorio == 4) {
     vidasEnemigo = 3;
     spanvidaEnemigo.innerHTML = vidasEnemigo;
     spanMascotaEnemigo.innerHTML = "Dragon Gyradous 🐙";
-  } else if (inputDragonPegassi.checked) {
+  } else if (mascotaAleatorio == 5) {
     vidasEnemigo = 2;
     spanvidaEnemigo.innerHTML = vidasEnemigo;
     spanMascotaEnemigo.innerHTML = "Dragon Pegassi 🐉";
-  } else if (inputDragonSkull.checked) {
+  } else if (mascotaAleatorio == 6) {
     vidasEnemigo = 1;
     spanvidaEnemigo.innerHTML = vidasEnemigo;
     spanMascotaEnemigo.innerHTML = "Dragon Skull 🦂";
@@ -208,18 +227,41 @@ function crearMensajeFinal(resutadoGlobalFinal) {
   parrafo.innerHTML = resutadoGlobalFinal;
 
   seccionMensajes.appendChild(parrafo);
+
+  let botonAguaJugador = document.getElementById("botonAgua");
+  botonAguaJugador.disabled = true;
+
+  let botonTierraJugador = document.getElementById("botonTierra");
+  botonTierraJugador.disabled = true;
+
+  let botonFuegoJugador = document.getElementById("botonFuego");
+  botonFuegoJugador.disabled = true;
+
+  let botonElectricidadJugador = document.getElementById("botonElectricidad");
+  botonElectricidadJugador.disabled = true;
+
+  let botonAireJugador = document.getElementById("botonAire");
+  botonAireJugador.disabled = true;
+
+  let sectionReiniciar = document.getElementById("sectionReiniciar");
+  sectionReiniciar.style.display = 'block';
 }
 
 function revisarVidas() {
   if (vidas == 0) {
-    crearMensajeFinal("Lo lamento Perdiste :C");
+    crearMensajeFinal("Lo lamento Perdiste 😔");
   } else if (vidasEnemigo == 0) {
-    crearMensajeFinal("Felicidades Ganaste");
+    crearMensajeFinal("🎇 Felicidades Ganaste 🍾");
   }
 }
 
 function aleatorio(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+
+function reiniciarJuego(){
+  location.reload();  
 }
 
 // Cuando termine de cargar toda la página iniciar la función iniciarJuego
