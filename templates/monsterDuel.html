@@ -12,9 +12,13 @@
     <h1>Monster Duel 🔥☁️💧🌱</h1>
 
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum expedita
-      earum ducimus amet consequuntur assumenda nihil culpa minima animi vel!
+      Interfaz de Batalla del Duelo de Monstruos
     </p>
+    <h3>Cosas por hacer</h3>
+    <ul>
+      <li>Integrar estilos</li>
+      <li>Integrar API Pokemon</li>
+    </ul>
 
     <p></p>
 
@@ -22,24 +26,24 @@
       <h2>Elíge tu mascota</h2>
       <p>MASCOTAS</p>
 
-      <label for="squirtle">Squirtle 🐳</label>
+      <label for="squirtle">EASY - Squirtle 🐳</label>
       <input type="radio" name="mascota" id="squirtle" />
-
-      <label for="bulbasor">Bulbasor 🐊</label>
+      <br>
+      <label for="bulbasor">MED/EASY - Bulbasor 🐊</label>
       <input type="radio" name="mascota" id="bulbasor" />
-
-      <label for="charmander">Charmander 🐯</label>
+      <br>
+      <label for="charmander">MEDIUM - Charmander 🐯</label>
       <input type="radio" name="mascota" id="charmander" />
-
-      <label for="dragonGyradous">Dragon Gyradous 🐙</label>
+      <br>
+      <label for="dragonGyradous">MED/HARD - Dragon Gyradous 🐙</label>
       <input type="radio" name="mascota" id="dragonGyradous" />
-
-      <label for="dragonPegassi">Dragon Pegassi 🐉</label>
+      <br>
+      <label for="dragonPegassi">HARD - Dragon Pegassi 🐉</label>
       <input type="radio" name="mascota" id="dragonPegassi" />
-
-      <label for="dragonSkull">Dragon Skull 🦂</label>
+      <br>
+      <label for="dragonSkull">REALLY HARD - Dragon Skull 🦂</label>
       <input type="radio" name="mascota" id="dragonSkull" />
-
+      <br>
       <button id="botonMascotas">Seleccionar</button>
     </section>
 
@@ -53,9 +57,9 @@
 
     <section id="seleccionarAtaque">
       <h2>Elíge tu ataque</h2>
-      <p>Tu mascota <span id="mascotaJugador"></span> tiene 3 vidas</p>
+      <p>Tu mascota <span id="mascotaJugador"> [--] </span> tiene <span id="vidaJugador"> [--] </span> vidas</p>
       <p>
-        La mascota del enemigo <span id="mascotaEnemigo"></span> tiene 3 vidas
+        La mascota del enemigo <span id="mascotaEnemigo"> [--] </span> tiene <span id="vidaEnemigo"> [--] </span> vidas
       </p>
       <div>
         <button id="botonAgua">Agua 💧</button> 
