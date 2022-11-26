@@ -1,3 +1,17 @@
-h1 {
+.title {
     color: goldenrod;
+    width: 380px;
+    height: 50px;
+    background-color:coral;
+}
+
+button{
+    background-color: aquamarine;
+}
+
+#seleccionarMascota {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
