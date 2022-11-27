@@ -1,17 +1,101 @@
-.title {
-    color: goldenrod;
-    width: 380px;
-    height: 50px;
-    background-color:coral;
+@font-face {
+    font-family: pokemonFont;
+    src: url(../pokemonFont/pokemonSolid.ttf);
+  }
+
+@font-face {
+font-family: pokemonInterfaceFont;
+src: url(../pokemonFont/pokemonInterface.ttf);
 }
+
+
+
+
+
+
+
+
+html {
+    background-image: url("../img/gimnasioPokemon.jpg");
+    background-color: #cccccc;
+}
+
+
 
 button{
     background-color: aquamarine;
 }
 
+
+/* Titulo Encabezado */
+.encabezado {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    margin: 0;
+    color: goldenrod;
+    width: 800px;
+    height: 120px;
+    text-size-adjust: 100px;
+    font-family: pokemonFont;
+    -webkit-text-stroke: 1px #1aa3ff;
+    text-shadow: -10px 10px 10px rgb(57, 52, 52);
+    font-size: 60px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+/* Divs de sección */
+section {
+    font-family: pokemonInterfaceFont;
+    padding: 10px;
+}
+
+
+/* Sección seleccionar Mascota Div */
 #seleccionarMascota {
+    margin: 50px;
+    width: 820px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #cccccc;
+    background-image: url("../img/interfacePokemon.jpg");
+    opacity: 70%;
+    color: aliceblue;
+}
+
+/* Titulo seleccionar mascota */
+
+#seleccionarMascota h2{
+    margin-bottom: 20px;
+    opacity: 100%;
+}
+
+/* Div de cada una de las opciones de seleccionar mascota */
+#seleccionarMascota div{
+    border: solid 1px #282ea8;
+    padding: 5px;
+    background-clip: content-box; /* support: IE9+ */
+    opacity: 1px;
+    margin: 5px;
+    opacity: 100%;
+}
+
+
+/* Sección seleccionar Ataque Div */
+#seleccionarAtaque {
+    margin: 50px;
+    background-image: radial-gradient(circle at 50% -20.71%, #ade5ff 0, #7dcefb 25%, #3cb5f2 50%, #009ce9 75%, #0085e0 100%);
+    opacity: 70%;
+    text-align: center;
+}
+
+#mensajes {
+    background-image: radial-gradient(circle at 50% -20.71%, #ade5ff 0, #7dcefb 25%, #3cb5f2 50%, #009ce9 75%, #0085e0 100%);
+    opacity: 70%;
+    font-size: 8px;
 }

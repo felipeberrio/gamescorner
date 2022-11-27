@@ -7,48 +7,49 @@
     <title>Monster Duel</title>
     <script src="../src/js/monsterDuel.js"></script>
     <link href="../src/styles/main.css" rel="stylesheet" type="text/css" />
-    <link href="../src/styles/monsterDuel.css" rel="stylesheet" type="text/css">
+    <link
+      href="../src/styles/monsterDuel.css"
+      rel="stylesheet"
+      type="text/css"
+    />
   </head>
   <body>
-    <h1 class="title">Monster Duel 🔥☁️💧🌱</h1>
+    <div class="mainContainer">
+      <header class="encabezado">
+        <h1 class="title">Monster Duel</h1>
+      </header>
 
-    <p>
-      Interfaz de Batalla del Duelo de Monstruos
-    </p>
-    <h3>Cosas por hacer</h3>
-    <ul>
-      <li>Integrar estilos</li>
-      <li>Integrar API Pokemon</li>
-    </ul>
+      <section id="seleccionarMascota">
+        <h2>Elíge tu mascota</h2>
 
-    <p></p>
+        <div>
+          <label for="squirtle">EASY - Squirtle 🐳</label>
+          <input type="radio" name="mascota" id="squirtle" checked />
+        </div>
+        <div>
+          <label for="bulbasor">MED/EASY - Bulbasor 🐊</label>
+          <input type="radio" name="mascota" id="bulbasor" />
+        </div>
+        <div>
+          <label for="charmander">MEDIUM - Charmander 🐯</label>
+          <input type="radio" name="mascota" id="charmander" />
+        </div>
+        <div>
+          <label for="dragonGyradous">MED/HARD - Dragon Gyradous 🐙</label>
+          <input type="radio" name="mascota" id="dragonGyradous" />
+        </div>
+        <div>
+          <label for="dragonPegassi">HARD - Dragon Pegassi 🐉</label>
+          <input type="radio" name="mascota" id="dragonPegassi" />
+        </div>
+        <div>
+          <label for="dragonSkull">REALLY HARD - Dragon Skull 🦂</label>
+          <input type="radio" name="mascota" id="dragonSkull" />
+        </div>
+        <button id="botonMascotas">Seleccionar</button>
+      </section>
 
-    <section id="seleccionarMascota">
-      <h2>Elíge tu mascota</h2>
-      <p>MASCOTAS</p>
-
-      <label for="squirtle">EASY - Squirtle 🐳</label>
-      <input type="radio" name="mascota" id="squirtle" checked/>
-      <br>
-      <label for="bulbasor">MED/EASY - Bulbasor 🐊</label>
-      <input type="radio" name="mascota" id="bulbasor" />
-      <br>
-      <label for="charmander">MEDIUM - Charmander 🐯</label>
-      <input type="radio" name="mascota" id="charmander" />
-      <br>
-      <label for="dragonGyradous">MED/HARD - Dragon Gyradous 🐙</label>
-      <input type="radio" name="mascota" id="dragonGyradous" />
-      <br>
-      <label for="dragonPegassi">HARD - Dragon Pegassi 🐉</label>
-      <input type="radio" name="mascota" id="dragonPegassi" />
-      <br>
-      <label for="dragonSkull">REALLY HARD - Dragon Skull 🦂</label>
-      <input type="radio" name="mascota" id="dragonSkull" />
-      <br>
-      <button id="botonMascotas">Seleccionar</button>
-    </section>
-
-    <!--         Squirtle -> Agua
+      <!--         Squirtle -> Agua
         Bulbasor -> Tierra
         Charmander -> Fuego
         Dragon Gyradous -> Agua y Fuego
@@ -56,33 +57,53 @@
         Dragon Skull -> Tierra y Fuego
  -->
 
-    <section id="seleccionarAtaque">
-      <h2>Elíge tu ataque</h2>
-      <p>Tu mascota <span id="mascotaJugador"> [--] </span> tiene <span id="vidaJugador"> [--] </span> vidas</p>
-      <p>
-        La mascota del enemigo <span id="mascotaEnemigo"> [--] </span> tiene <span id="vidaEnemigo"> [--] </span> vidas
-      </p>
+      <section id="seleccionarAtaque">
+        <h2>Elíge tu ataque</h2>
+        <p>
+          Tu mascota <span id="mascotaJugador"> [--] </span> tiene
+          <span id="vidaJugador"> [--] </span> vidas
+        </p>
+        <p>
+          La mascota del enemigo <span id="mascotaEnemigo"> [--] </span> tiene
+          <span id="vidaEnemigo"> [--] </span> vidas
+        </p>
+        <div>
+          <button id="botonAgua">Agua 💧</button>
+          <button id="botonTierra">Tierra 🌱</button>
+          <button id="botonFuego">Fuego 🔥</button>
+          <button id="botonElectricidad">Electricidad ⚡</button>
+          <button id="botonAire">Aire ☁️</button>
+        </div>
+      </section>
+      <section id="mensajes"></section>
+      
       <div>
-        <button id="botonAgua">Agua 💧</button> 
-        <button id="botonTierra">Tierra 🌱</button> 
-        <button id="botonFuego">Fuego 🔥</button> 
-        <button id="botonElectricidad">Electricidad ⚡</button> 
-        <button id="botonAire">Aire ☁️</button> 
+        <br />
+        <h3>Reglas del juego</h3>
+        <p>
+          (1) Agua 💧 gana (3) Fuego 🔥 y gana (4) Electricidad ⚡<br />(2)
+          Tierra 🌱 gana (4) Electricidad ⚡ y gana (1) Agua 💧<br />(3) Fuego
+          🔥 gana (2) Tierra 🌱 y gana (5) Aire ☁️<br />(4) Electricidad ⚡ gana
+          (5) Aire ☁️ y gana (3) Fuego 🔥<br />(5) Aire ☁️ gana (1) Agua 💧 y
+          gana (2) Tierra 🌱
+        </p>
       </div>
-    </section>
-    <div>
-      <br>
-      <h3>Reglas del juego</h3>
-      <p>(1) Agua 💧 gana (3) Fuego 🔥 y gana (4) Electricidad ⚡<br>(2) Tierra 🌱 gana (4) Electricidad ⚡ y gana (1) Agua 💧<br>(3) Fuego 🔥 gana (2) Tierra 🌱 y gana (5) Aire ☁️<br>(4) Electricidad ⚡ gana (5) Aire ☁️ y gana (3) Fuego 🔥<br>(5) Aire ☁️ gana (1) Agua 💧 y gana (2) Tierra 🌱</p>
-    </div>
-    <section id="mensajes"></section>
+      <section id="sectionReiniciar">
+        <button id="botonReiniciar">Reinciar</button>
+      </section>
 
-    <section id="sectionReiniciar">
-      <button id="botonReiniciar">Reinciar</button>
-    </section>
+      <div>
+        <button onclick="location.href='../index.html'">Go Back 🔙</button>
+      </div>
 
-    <div>
-      <button onclick="location.href='../index.html'">Go Back 🔙</button>
+      <p>Interfaz de Batalla del Duelo de Monstruos</p>
+      <h3>Cosas por hacer</h3>
+      <ul>
+        <li>Integrar estilos</li>
+        <li>Integrar API Pokemon</li>
+      </ul>
+
+      <p></p>
     </div>
   </body>
 </html>
