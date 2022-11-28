@@ -19,6 +19,12 @@ function iniciarJuego() {
   let sectionReiniciar = document.getElementById("sectionReiniciar");
   sectionReiniciar.style.display = 'none';
 
+  let sectionReglasJuego = document.getElementById("reglasJuego");
+  sectionReglasJuego.style.display = 'none';
+
+  let sectionMensajes = document.getElementById("mensajes");
+  sectionMensajes.style.display = 'none';
+
   // Traemos del DOM -> monsterDuel.html la etiqueta con id "botonMascotas" y la guardamos en una variable que estaremos escuchando el evento click para iniciar la función seleccionarMascotaJugador
   let botonMascotaJugador = document.getElementById("botonMascotas");
   botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
@@ -203,6 +209,9 @@ function seleccionarMascotaEnemigo() {
     spanvidaEnemigo.innerHTML = vidasEnemigo;
     spanMascotaEnemigo.innerHTML = "Dragon Skull 🦂";
   }
+
+  let sectionMensajes = document.getElementById("mensajes");
+  sectionMensajes.style.display = 'block';
 }
 
 function crearMensaje(resutadoGlobal) {
