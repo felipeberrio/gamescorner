@@ -56,9 +56,12 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: radial-gradient(circle at 50% -20.71%, #ade5ff 0, #7dcefb 25%, #3cb5f2 50%, #009ce9 75%, #0085e0 100%);
+    background-image: linear-gradient(rgba(0, 246, 37, 0.5), rgba(21, 185, 92, 0.5));
+
+    Poner en opaco gris*/
+
 /*     background-image: url("../img/interfacePokemon.jpg"); */
-    opacity: 70%;
+
 /*     color: aliceblue; */
     background-repeat:calc();
 }
@@ -67,25 +70,36 @@ section {
 
 #seleccionarMascota h2{
     margin-bottom: 20px;
-    opacity: 100%;
 }
 
 /* Div de cada una de las opciones de seleccionar mascota */
-#seleccionarMascota div{
-    border: solid 1px #282ea8;
-    padding: 5px;
-    background-clip: content-box; /* support: IE9+ */
-    opacity: 1px;
-    margin: 5px;
-    opacity: 100%;
+.tajetasMascotas {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+
 }
 
+.tarjetaMascotaIndividual {
+    border: solid 1px #282ea8;
+    background-clip: content-box; /* support: IE9+ */
+    margin: 5px;
+    gap: 10px; /* Margen entre los divs*/
+    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5));
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imagenMascota{
+    width: 70%;
+}
 
 /* Sección seleccionar Ataque Div */
 #seleccionarAtaque {
     margin: 50px;
-    background-image: radial-gradient(circle at 50% -20.71%, #ade5ff 0, #7dcefb 25%, #3cb5f2 50%, #009ce9 75%, #0085e0 100%);
-    opacity: 70%;
+    background-image:  linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5));
     text-align: center;
 }
 
@@ -107,3 +121,46 @@ section {
     display: flex;
     justify-content:space-around;
 }
+
+.btn-borde {
+    padding: .375rem .75rem;
+    border: 1px solid #000000;
+    border-radius: .25rem;
+    color: #000000;
+    transition: color .15s ease-in-out,
+      background-color .15s ease-in-out;
+    background-color: #e0eadd;
+  }
+  
+  .btn-borde:hover, .btn-borde:active, .btn-borde:focus {
+    color: #fff;
+    background-color: #211a82;
+  }
+
+.btn-3d {
+    padding: .6rem 1rem;
+    border: 1px solid #995309;
+    border-radius: 4px;
+    background-color: #d9750b;
+    color: #fff;
+  
+    font-size: 1.5rem;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    box-shadow: 0 1px 0 rgba(255,255,255,.5) inset,
+      0 1px 3px rgba(0,0,0,.2);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f90),to(#e76a00));
+    background-image: linear-gradient(#f90 10%,#e76a00 100%);
+  }
+  
+  .btn-3d:hover, .btn-3d:focus {
+    background-color: #e0811b;
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f0a100),to(#f70));
+    background-image: linear-gradient(#f0a100 10%,#f70 100%);
+  }
+  
+  .btn-3d:active {
+    background-color: #cf6a00;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2) inset;
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f0a100),to(#f70));
+    background-image: linear-gradient(#f0a100 10%,#f70 100%);
+  }

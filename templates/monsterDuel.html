@@ -22,31 +22,34 @@
       <section id="seleccionarMascota">
         <h2>Elíge tu mascota</h2>
 
-        <div>
-          <label for="squirtle">EASY - Squirtle 🐳</label>
-          <input type="radio" name="mascota" id="squirtle" checked />
+        <div class="tajetasMascotas">
+          <div class="tarjetaMascotaIndividual">
+            
+            <label for="squirtle"><img class="imagenMascota" src="../src/img/mascotas/squirtle.jpg" alt="Squirtle"><br>EASY<br>Squirtle</label>
+            <input type="radio" name="mascota" id="squirtle" checked />
+          </div>
+          <div class="tarjetaMascotaIndividual">
+            <label for="bulbasor"><img class="imagenMascota" src="../src/img/mascotas/bulbasor.jpg" alt="Bulbasor"><br>MED/EASY<br>Bulbasor</label>
+            <input type="radio" name="mascota" id="bulbasor" />
+          </div>
+          <div class="tarjetaMascotaIndividual">
+            <label for="charmander"><img class="imagenMascota" src="../src/img/mascotas/charmander.gif" alt="Charmander"><br>MEDIUM<br>Charmander</label>
+            <input type="radio" name="mascota" id="charmander" />
+          </div>
+          <div class="tarjetaMascotaIndividual">
+            <label for="dragonGyradous"><img class="imagenMascota" src="../src/img/mascotas/gyradous.png" alt="Gyradous"><br>MED/HARD<br>Dragon Gyradous</label>
+            <input type="radio" name="mascota" id="dragonGyradous" />
+          </div>
+          <div class="tarjetaMascotaIndividual">
+            <label for="dragonPegassi"><img class="imagenMascota" src="../src/img/mascotas/pegassi.gif" alt="Pegassi"><br>HARD<br>Dragon Pegassi</label>
+            <input type="radio" name="mascota" id="dragonPegassi" />
+          </div>
+          <div class="tarjetaMascotaIndividual">
+            <label for="dragonSkull"><img class="imagenMascota" src="../src/img/mascotas/cubone.png" alt="Skull"><br>REALLY HARD<br>Dragon Skull</label>
+            <input type="radio" name="mascota" id="dragonSkull" />
+          </div>
         </div>
-        <div>
-          <label for="bulbasor">MED/EASY - Bulbasor 🐊</label>
-          <input type="radio" name="mascota" id="bulbasor" />
-        </div>
-        <div>
-          <label for="charmander">MEDIUM - Charmander 🐯</label>
-          <input type="radio" name="mascota" id="charmander" />
-        </div>
-        <div>
-          <label for="dragonGyradous">MED/HARD - Dragon Gyradous 🐙</label>
-          <input type="radio" name="mascota" id="dragonGyradous" />
-        </div>
-        <div>
-          <label for="dragonPegassi">HARD - Dragon Pegassi 🐉</label>
-          <input type="radio" name="mascota" id="dragonPegassi" />
-        </div>
-        <div>
-          <label for="dragonSkull">REALLY HARD - Dragon Skull 🦂</label>
-          <input type="radio" name="mascota" id="dragonSkull" />
-        </div>
-        <button id="botonMascotas">Seleccionar</button>
+        <button class="btn-borde" id="botonMascotas">Seleccionar</button>
       </section>
 
       <!--         Squirtle -> Agua
@@ -88,12 +91,12 @@
         </p>
       </div>
       <section id="sectionReiniciar">
-        <button id="botonReiniciar">Reinciar</button>
+        <button class="btn-borde" id="botonReiniciar">Reinciar</button>
       </section>
 
       <div id="botones">
-        <button>Rules</button>
-        <button onclick="location.href='../index.html'">Go Back 🔙</button>
+        <button class="btn-3d">Rules</button>
+        <button class="btn-3d" onclick="location.href='../index.html'">Go Back 🔙</button>
       </div>
 
       <p>Interfaz de Batalla del Duelo de Monstruos</p>
