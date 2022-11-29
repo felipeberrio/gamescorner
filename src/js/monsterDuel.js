@@ -215,18 +215,33 @@ function seleccionarMascotaEnemigo() {
 }
 
 function crearMensaje(resutadoGlobal) {
-  let seccionMensajes = document.getElementById("mensajes");
-  let parrafo = document.createElement("p");
+  let seccionMensajes = document.getElementById("mensajeP");
 
-  parrafo.innerHTML =
-    "Tu mascota atacó con " +
-    ataqueJugador +
-    ", la mascota del enemigo atacó con " +
-    ataqueEnemigo +
-    " - y el resultado fué: " +
-    resutadoGlobal;
+  let ataqueJugadorUno = document.getElementById('ataqueJugador');
+  let ataqueEnemigoUno = document.getElementById('ataqueEnemigo');
 
-  seccionMensajes.appendChild(parrafo);
+  let nuevoAtaqueJugador = document.createElement('p');
+  let nuevoAtaqueEnemigo= document.createElement('p');
+
+
+  seccionMensajes.innerHTML = resutadoGlobal
+  ataqueJugadorUno.innerHTML = ataqueJugador
+  ataqueEnemigoUno.innerHTML = ataqueEnemigo
+  ataqueJugadorUno.appendChild(nuevoAtaqueJugador)
+  ataqueEnemigoUno.appendChild(nuevoAtaqueJugador)
+
+
+  // let parrafo = document.createElement("p");
+
+  // parrafo.innerHTML =
+  //   "Tu mascota atacó con " +
+  //   ataqueJugador +
+  //   ", la mascota del enemigo atacó con " +
+  //   ataqueEnemigo +
+  //   " - y el resultado fué: " +
+  //   resutadoGlobal;
+
+  // seccionMensajes.appendChild(parrafo);
 }
 
 function crearMensajeFinal(resutadoGlobalFinal) {

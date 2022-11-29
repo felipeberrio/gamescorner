@@ -24,6 +24,7 @@
 
         <div class="tajetasMascotas">
           <div class="tarjetaMascotaIndividual">
+            <input type="radio" name="mascota" id="squirtle" checked />
             <label for="squirtle"
               ><img
                 class="imagenMascota"
@@ -31,9 +32,9 @@
                 alt="Squirtle"
               /><br />EASY<br />Squirtle</label
             >
-            <input type="radio" name="mascota" id="squirtle" checked />
           </div>
           <div class="tarjetaMascotaIndividual">
+            <input type="radio" name="mascota" id="bulbasor" />
             <label for="bulbasor"
               ><img
                 class="imagenMascota"
@@ -41,9 +42,9 @@
                 alt="Bulbasor"
               /><br />MED/EASY<br />Bulbasor</label
             >
-            <input type="radio" name="mascota" id="bulbasor" />
           </div>
           <div class="tarjetaMascotaIndividual">
+            <input type="radio" name="mascota" id="charmander" />
             <label for="charmander"
               ><img
                 class="imagenMascota"
@@ -51,9 +52,9 @@
                 alt="Charmander"
               /><br />MEDIUM<br />Charmander</label
             >
-            <input type="radio" name="mascota" id="charmander" />
           </div>
           <div class="tarjetaMascotaIndividual">
+            <input type="radio" name="mascota" id="dragonGyradous" />
             <label for="dragonGyradous"
               ><img
                 class="imagenMascota"
@@ -61,9 +62,9 @@
                 alt="Gyradous"
               /><br />MED/HARD<br />Dragon Gyradous</label
             >
-            <input type="radio" name="mascota" id="dragonGyradous" />
           </div>
           <div class="tarjetaMascotaIndividual">
+            <input type="radio" name="mascota" id="dragonPegassi" />
             <label for="dragonPegassi"
               ><img
                 class="imagenMascota"
@@ -71,9 +72,9 @@
                 alt="Pegassi"
               /><br />HARD<br />Dragon Pegassi</label
             >
-            <input type="radio" name="mascota" id="dragonPegassi" />
           </div>
           <div class="tarjetaMascotaIndividual">
+            <input type="radio" name="mascota" id="dragonSkull" />
             <label for="dragonSkull"
               ><img
                 class="imagenMascota"
@@ -81,7 +82,6 @@
                 alt="Skull"
               /><br />REALLY HARD<br />Dragon Skull</label
             >
-            <input type="radio" name="mascota" id="dragonSkull" />
           </div>
         </div>
         <button class="btn-borde" id="botonMascotas">Seleccionar</button>
@@ -113,8 +113,15 @@
           <button id="botonAire">Aire ☁️</button>
         </div>
       </section>
-      <section id="sectionReiniciar"><button class="btn-borde" id="botonReiniciar">Reinciar</button></section>
-      <section id="mensajes">Bienvenido a tu primer Duelo de Monstros</section>
+      <section id="sectionReiniciar">
+        <button class="btn-borde" id="botonReiniciar">Reinciar</button>
+      </section>
+      <section id="mensajes">
+        <p id="mensajeP">Bienvenido a tu primer Duelo de Monstros</p>
+      </section>
+
+      <div id="ataqueJugador"></div>
+    | <div id="ataqueEnemigo"></div>
 
       <div id="reglasJuego">
         <h3>Reglas del juego</h3>

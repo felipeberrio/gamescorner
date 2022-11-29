@@ -57,12 +57,6 @@ section {
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(rgba(0, 246, 37, 0.5), rgba(21, 185, 92, 0.5));
-
-    Poner en opaco gris*/
-
-/*     background-image: url("../img/interfacePokemon.jpg"); */
-
-/*     color: aliceblue; */
     background-repeat:calc();
 }
 
@@ -73,6 +67,12 @@ section {
 }
 
 /* Div de cada una de las opciones de seleccionar mascota */
+input{
+    display: none;
+}
+
+
+
 .tajetasMascotas {
     display: flex;
     flex-direction: row;
@@ -94,6 +94,13 @@ section {
 
 .imagenMascota{
     width: 70%;
+    filter: sepia(1) opacity(75%);
+}
+
+/* Se utiliza cuando el input este checked, un selector de CSS de mismo nivel de jerarquia inmediato hermano */
+input:checked + label img{
+        filter: sepia(0) opacity(1);
+
 }
 
 /* Sección seleccionar Ataque Div */
@@ -115,6 +122,9 @@ section {
     align-content: center;
 }
 
+#botonAgua:hover {
+    background-image: url("../img/ataques/agua.gif");
+}
 
 /* Seccion final de botones */
 
