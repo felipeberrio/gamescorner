@@ -16,8 +16,8 @@ function iniciarJuego() {
   divBatlla.style.display = 'none';
 
 
-  let sectionReiniciar = document.getElementById("sectionReiniciar");
-  sectionReiniciar.style.display = 'none';
+  let botonDeReiniciar = document.getElementById("botonReiniciar");
+  botonDeReiniciar.style.display = 'none';
 
   let sectionReglasJuego = document.getElementById("reglasJuego");
   sectionReglasJuego.style.display = 'none';
@@ -228,7 +228,7 @@ function crearMensaje(resutadoGlobal) {
   ataqueJugadorUno.innerHTML = ataqueJugador
   ataqueEnemigoUno.innerHTML = ataqueEnemigo
   ataqueJugadorUno.appendChild(nuevoAtaqueJugador)
-  ataqueEnemigoUno.appendChild(nuevoAtaqueJugador)
+  ataqueEnemigoUno.appendChild(nuevoAtaqueEnemigo)
 
 
   // let parrafo = document.createElement("p");
@@ -245,12 +245,9 @@ function crearMensaje(resutadoGlobal) {
 }
 
 function crearMensajeFinal(resutadoGlobalFinal) {
-  let seccionMensajes = document.getElementById("mensajes");
-  let parrafo = document.createElement("p");
+  let seccionMensajes = document.getElementById("mensajeP");
 
-  parrafo.innerHTML = resutadoGlobalFinal;
-
-  seccionMensajes.appendChild(parrafo);
+  seccionMensajes.innerHTML = resutadoGlobalFinal;
 
   let botonAguaJugador = document.getElementById("botonAgua");
   botonAguaJugador.disabled = true;
@@ -267,8 +264,8 @@ function crearMensajeFinal(resutadoGlobalFinal) {
   let botonAireJugador = document.getElementById("botonAire");
   botonAireJugador.disabled = true;
 
-  let sectionReiniciar = document.getElementById("sectionReiniciar");
-  sectionReiniciar.style.display = 'block';
+  let botonDeReiniciar = document.getElementById("botonReiniciar");
+  botonDeReiniciar.style.display = 'block';
 }
 
 function revisarVidas() {
