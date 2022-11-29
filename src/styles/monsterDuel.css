@@ -11,9 +11,9 @@ src: url(../pokemonFont/pokemonInterface.ttf);
 }
 
 html {
-    background-image: url("../img/gimnasioPokemon.jpg");
+    background-image: url("../img/fondo.jpg");
     background-color: #cccccc;
-    background-repeat:round;
+    background-size: auto;
 }
 
 button{
@@ -108,40 +108,69 @@ input:checked + label img{
     margin: 50px;
     background-image:  linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5));
     text-align: center;
+
 }
 
 #mensajes {
     background-image: radial-gradient(circle at 50% -20.71%, #ade5ff 0, #7dcefb 25%, #3cb5f2 50%, #009ce9 75%, #0085e0 100%);
     opacity: 70%;
     font-size: 8px;
-    /* display: flex;
-    flex-direction: row;
-    align-content: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#botonAgua:hover {
+.seccionAtaques {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.btn-borde {
+    padding: .375rem .75rem;
+    border: 1px solid #000000;
+    box-shadow: 2px -3px 0 rgba(91, 89, 89, 0.273) inset,
+    0 1px 3px rgba(0,0,0,.2);
+    border-radius: 70%;
+    color: #000000;
+    transition: color .15s ease-in-out,
+      background-color .15s ease-in-out;
+    background-color: #e0eadd;
+  }
+
+  #botonAgua:hover {
     background-image: url("../img/ataques/agua.gif");
     background-position: center;
+    color: transparent;
+    box-shadow: none;
 }
 
 #botonTierra:hover {
     background-image: url("../img/ataques/tierra.gif");
     background-position: center;
+    color: transparent;
+    box-shadow: none;
 }
 
 #botonFuego:hover {
     background-image: url("../img/ataques/fuego.gif");
     background-position: center;
+    color: transparent;
+    box-shadow: none;
 }
 
 #botonElectricidad:hover {
     background-image: url("../img/ataques/electricidad.gif");
     background-position: center;
+    color: transparent;
+    box-shadow: none;
 }
 
 #botonAire:hover {
     background-image: url("../img/ataques/aire.gif");
     background-position: center;
+    color: transparent;
+    box-shadow: none;
 }
 
 /* Seccion final de botones */
@@ -151,21 +180,6 @@ input:checked + label img{
     justify-content:space-around;
 }
 
-.btn-borde {
-    padding: .375rem .75rem;
-    border: 1px solid #000000;
-    border-radius: .25rem;
-    color: #000000;
-    transition: color .15s ease-in-out,
-      background-color .15s ease-in-out;
-    background-color: #e0eadd;
-  }
-  
-  .btn-borde:hover, .btn-borde:active, .btn-borde:focus {
-    color: #fff;
-    background-color: #211a82;
-  }
-
 .btn-3d {
     padding: .6rem 1rem;
     border: 1px solid #995309;
@@ -173,7 +187,7 @@ input:checked + label img{
     background-color: #d9750b;
     color: #fff;
   
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-shadow: 0 -1px 0 rgba(0,0,0,.5);
     box-shadow: 0 1px 0 rgba(255,255,255,.5) inset,
       0 1px 3px rgba(0,0,0,.2);
@@ -182,7 +196,7 @@ input:checked + label img{
   }
   
   .btn-3d:hover, .btn-3d:focus {
-    background-color: #e0811b;
+    background-color: #cf6a00;
     background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f0a100),to(#f70));
     background-image: linear-gradient(#f0a100 10%,#f70 100%);
   }

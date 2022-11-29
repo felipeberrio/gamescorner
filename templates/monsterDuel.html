@@ -18,7 +18,6 @@
       <header class="encabezado">
         <h1 class="title">Monster Duel</h1>
       </header>
-
       <section id="seleccionarMascota">
         <h2>Elíge tu mascota</h2>
 
@@ -84,42 +83,45 @@
             >
           </div>
         </div>
-        <button class="btn-borde" id="botonMascotas">Seleccionar</button>
+        <button class="btn-3d" id="botonMascotas">Seleccionar</button>
       </section>
-
-      <!--         Squirtle -> Agua
-        Bulbasor -> Tierra
-        Charmander -> Fuego
-        Dragon Gyradous -> Agua y Fuego
-        Dragon Pegassi -> Agua y Tierra
-        Dragon Skull -> Tierra y Fuego
- -->
-
       <section id="seleccionarAtaque">
         <h2>Elíge tu ataque</h2>
-        <p>
-          Tu mascota <span id="mascotaJugador"> [--] </span> tiene
-          <span id="vidaJugador"> [--] </span> vidas
-        </p>
-        <p>
-          La mascota del enemigo <span id="mascotaEnemigo"> [--] </span> tiene
-          <span id="vidaEnemigo"> [--] </span> vidas
-        </p>
         <div>
-          <button id="botonAgua">Agua 💧</button>
-          <button id="botonTierra">Tierra 🌱</button>
-          <button id="botonFuego">Fuego 🔥</button>
-          <button id="botonElectricidad">Electricidad ⚡</button>
-          <button id="botonAire">Aire ☁️</button>
+          <button class="btn-borde" id="botonAgua">Agua 💧</button>
+          <button class="btn-borde" id="botonTierra">Tierra 🌱</button>
+          <button class="btn-borde" id="botonFuego">Fuego 🔥</button>
+          <button class="btn-borde" id="botonElectricidad">Electricidad ⚡</button>
+          <button class="btn-borde" id="botonAire">Aire ☁️</button>
         </div>
+        <p>
+          Tu mascota <span id="mascotaJugador"> [--] </span> 
+          <!-- tiene <span id="vidaJugador"> [--] </span> vidas -->
+        </p>
+        <p>
+          La mascota del enemigo <span id="mascotaEnemigo"> [--] </span> 
+          <!-- tiene<span id="vidaEnemigo"> [--] </span> vidas -->
+        </p>
       </section>
       <section id="mensajes">
-        <button class="btn-borde" id="botonReiniciar">Reinciar</button>
-        <p id="mensajeP">Bienvenido a tu primer Duelo de Monstros</p>
+        <div id="mensajePrincipal">Bienvenido a tu primer Duelo de Monstros</div>
+
+        <div class="seccionAtaques">
+          <div>
+            <div id="ataqueJugador"></div>
+            <p>Tu mascota tiene <span id="vidaJugador"> [--] </span> vidas</p>
+          </div>
+          <div>
+            <div id="ataqueEnemigo"></div>
+            <p>La mascota del enemigo tiene <span id="vidaEnemigo"> [--] </span> vidas</p>
+          </div>
+        </div>
+        <button class="btn-3d" id="botonReiniciar">Reinciar</button>
       </section>
 
-      <div id="ataqueJugador"></div>
-    | <div id="ataqueEnemigo"></div>
+
+      |
+
 
       <div id="reglasJuego">
         <h3>Reglas del juego</h3>

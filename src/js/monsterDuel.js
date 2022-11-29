@@ -61,7 +61,9 @@ function seleccionarMascotaJugador() {
 
   if (inputSquirtle.checked) {
     vidas = 8;
-    spanMascotaJugador.innerHTML = "Squirtle 🐳";
+    // spanMascotaJugador.appendChild(document.createElement('img')).src = '../img/mascotas/squirtle.jpg';
+    // spanMascotaJugador.innerHTML = "Squirtle 🐳";
+    spanMascotaJugador.innerHTML = "<img src='../img/mascotas/squirtle.jpg' width='16' height='16'>";
     spanvidaJugador.innerHTML = vidas;
   } else if (inputBulbasor.checked) {
     vidas = 6;
@@ -91,7 +93,7 @@ function seleccionarMascotaJugador() {
   divMascota.style.display = 'none';
 
   let divBatlla = document.getElementById("seleccionarAtaque");
-  divBatlla.style.display = 'block';
+  divBatlla.style.display = 'grid';
 
   seleccionarMascotaEnemigo();
 }
@@ -211,11 +213,11 @@ function seleccionarMascotaEnemigo() {
   }
 
   let sectionMensajes = document.getElementById("mensajes");
-  sectionMensajes.style.display = 'block';
+  sectionMensajes.style.display = 'flex';
 }
 
 function crearMensaje(resutadoGlobal) {
-  let seccionMensajes = document.getElementById("mensajeP");
+  let seccionMensajes = document.getElementById("mensajePrincipal");
 
   let ataqueJugadorUno = document.getElementById('ataqueJugador');
   let ataqueEnemigoUno = document.getElementById('ataqueEnemigo');
@@ -245,7 +247,7 @@ function crearMensaje(resutadoGlobal) {
 }
 
 function crearMensajeFinal(resutadoGlobalFinal) {
-  let seccionMensajes = document.getElementById("mensajeP");
+  let seccionMensajes = document.getElementById("mensajePrincipal");
 
   seccionMensajes.innerHTML = resutadoGlobalFinal;
 
@@ -265,7 +267,7 @@ function crearMensajeFinal(resutadoGlobalFinal) {
   botonAireJugador.disabled = true;
 
   let botonDeReiniciar = document.getElementById("botonReiniciar");
-  botonDeReiniciar.style.display = 'block';
+  botonDeReiniciar.style.display = 'flex';
 }
 
 function revisarVidas() {
