@@ -73,12 +73,22 @@ input{
 
 
 
-.tajetasMascotas {
+.tarjetasMascotas, .tarjetasAtaque {
     display: flex;
-    flex-direction: row;
     text-align: center;
+    justify-content: center;
+    gap: 10px;
 
 }
+
+@media (max-width: 600px){
+    .tarjetasMascotas, .tarjetasAtaque{
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
 
 .tarjetaMascotaIndividual {
     border: solid 1px #282ea8;
