@@ -130,6 +130,18 @@ input:checked + label img{
     align-items: center;
 }
 
+#mensajeJugador{
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+#mensajeEnemigo{
+    margin:5px;
+    padding: 10px;
+    text-align: center;
+}
+
 .seccionAtaques {
     display: flex;
     justify-content: space-around;
