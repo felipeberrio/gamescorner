@@ -5,12 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Monster Duel</title>
-    <script src="../src/js/monsterDuel.js"></script>
     <link href="../src/styles/main.css" rel="stylesheet" type="text/css" />
     <link
-      href="../src/styles/monsterDuel.css"
-      rel="stylesheet"
-      type="text/css"
+    href="../src/styles/monsterDuel.css"
+    rel="stylesheet"
+    type="text/css"
     />
   </head>
   <body>
@@ -20,66 +19,66 @@
       </header>
       <section id="seleccionarMascota">
         <h2>Elíge tu mascota</h2>
-
+        
         <div class="tarjetasMascotas">
           <div class="tarjetaMascotaIndividual">
             <input type="radio" name="mascota" id="squirtle" checked />
             <label for="squirtle"
-              ><img
-                class="imagenMascota"
-                src="../src/img/mascotas/squirtle.jpg"
-                alt="Squirtle"
-              /><br />EASY<br />Squirtle</label
+            ><img
+            class="imagenMascota"
+            src="../src/img/mascotas/squirtle.jpg"
+            alt="Squirtle"
+            /><br />EASY<br />Squirtle</label
             >
           </div>
           <div class="tarjetaMascotaIndividual">
             <input type="radio" name="mascota" id="bulbasor" />
             <label for="bulbasor"
-              ><img
-                class="imagenMascota"
-                src="../src/img/mascotas/bulbasor.jpg"
-                alt="Bulbasor"
-              /><br />MED/EASY<br />Bulbasor</label
+            ><img
+            class="imagenMascota"
+            src="../src/img/mascotas/bulbasor.jpg"
+            alt="Bulbasor"
+            /><br />MED/EASY<br />Bulbasor</label
             >
           </div>
           <div class="tarjetaMascotaIndividual">
             <input type="radio" name="mascota" id="charmander" />
             <label for="charmander"
-              ><img
-                class="imagenMascota"
-                src="../src/img/mascotas/charmander.gif"
-                alt="Charmander"
-              /><br />MEDIUM<br />Charmander</label
+            ><img
+            class="imagenMascota"
+            src="../src/img/mascotas/charmander.gif"
+            alt="Charmander"
+            /><br />MEDIUM<br />Charmander</label
             >
           </div>
           <div class="tarjetaMascotaIndividual">
             <input type="radio" name="mascota" id="dragonGyradous" />
             <label for="dragonGyradous"
-              ><img
-                class="imagenMascota"
-                src="../src/img/mascotas/gyradous.png"
-                alt="Gyradous"
-              /><br />MED/HARD<br />Dragon Gyradous</label
+            ><img
+            class="imagenMascota"
+            src="../src/img/mascotas/gyradous.png"
+            alt="Gyradous"
+            /><br />MED/HARD<br />Dragon Gyradous</label
             >
           </div>
           <div class="tarjetaMascotaIndividual">
             <input type="radio" name="mascota" id="dragonPegassi" />
             <label for="dragonPegassi"
-              ><img
-                class="imagenMascota"
-                src="../src/img/mascotas/pegassi.gif"
-                alt="Pegassi"
-              /><br />HARD<br />Dragon Pegassi</label
+            ><img
+            class="imagenMascota"
+            src="../src/img/mascotas/pegassi.gif"
+            alt="Pegassi"
+            /><br />HARD<br />Dragon Pegassi</label
             >
           </div>
           <div class="tarjetaMascotaIndividual">
             <input type="radio" name="mascota" id="dragonSkull" />
             <label for="dragonSkull"
-              ><img
-                class="imagenMascota"
-                src="../src/img/mascotas/cubone.png"
-                alt="Skull"
-              /><br />REALLY HARD<br />Dragon Skull</label
+            ><img
+            class="imagenMascota"
+            src="../src/img/mascotas/cubone.png"
+            alt="Skull"
+            /><br />REALLY HARD<br />Dragon Skull</label
             >
           </div>
         </div>
@@ -94,18 +93,15 @@
           <button class="btn-borde" id="botonElectricidad">Electricidad ⚡</button>
           <button class="btn-borde" id="botonAire">Aire ☁️</button>
         </div>
-        <p>
-          Tu mascota <span id="mascotaJugador"> [--] </span> 
-          <!-- tiene <span id="vidaJugador"> [--] </span> vidas -->
-        </p>
-        <p>
-          La mascota del enemigo <span id="mascotaEnemigo"> [--] </span> 
-          <!-- tiene<span id="vidaEnemigo"> [--] </span> vidas -->
-        </p>
+        <div id="batalla-frame">
+          <div> <span id="mascotaJugador"> [--] </span> </div>
+          <div> <h2>Vs</h2> </div>
+          <div> <span id="mascotaEnemigo"> [--] </span> </div>
+        </div>
       </section>
       <section id="mensajes">
         <div id="mensajePrincipal">Bienvenido a tu primer Duelo de Monstros</div>
-
+        
         <div class="seccionAtaques">
           <div id="mensajeJugador">
             <div id="ataqueJugador"></div>
@@ -118,11 +114,11 @@
         </div>
         <button class="btn-3d" id="botonReiniciar">Reinciar</button>
       </section>
-
-
+      
+      
       |
-
-
+      
+      
       <div id="reglasJuego">
         <h3>Reglas del juego</h3>
         <p>
@@ -133,22 +129,14 @@
           gana (2) Tierra 🌱
         </p>
       </div>
-
+      
       <div id="botones">
         <button class="btn-3d">Rules</button>
         <button class="btn-3d" onclick="location.href='../index.html'">
           Go Back 🔙
         </button>
       </div>
-
-      <p>Interfaz de Batalla del Duelo de Monstruos</p>
-      <h3>Cosas por hacer</h3>
-      <ul>
-        <li>Integrar estilos</li>
-        <li>Integrar API Pokemon</li>
-      </ul>
-
-      <p></p>
     </div>
+    <script src="../src/js/monsterDuel.js"></script>
   </body>
 </html>

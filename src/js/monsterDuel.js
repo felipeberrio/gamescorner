@@ -1,98 +1,98 @@
+const divBatlla = document.getElementById("seleccionarAtaque");
+const botonDeReiniciar = document.getElementById("botonReiniciar");
+const sectionReglasJuego = document.getElementById("reglasJuego");
+const sectionMensajes = document.getElementById("mensajes");
+const botonMascotaJugador = document.getElementById("botonMascotas");
+const botonAguaJugador = document.getElementById("botonAgua");
+const botonTierraJugador = document.getElementById("botonTierra");
+const botonFuegoJugador = document.getElementById("botonFuego");
+const botonElectricidadJugador = document.getElementById("botonElectricidad");
+const botonAireJugador = document.getElementById("botonAire");
+const botonReiniciar = document.getElementById("botonReiniciar");
+const inputSquirtle = document.getElementById("squirtle");
+const inputBulbasor = document.getElementById("bulbasor");
+const inputCharmander = document.getElementById("charmander");
+const inputDragonGyradous = document.getElementById("dragonGyradous");
+const inputDragonPegassi = document.getElementById("dragonPegassi");
+const inputDragonSkull = document.getElementById("dragonSkull");
+const spanvidaJugador = document.getElementById("vidaJugador");
+const spanvidaEnemigo = document.getElementById("vidaEnemigo");
+const divMascota = document.getElementById("seleccionarMascota");
+const spanMascotaEnemigo = document.getElementById("mascotaEnemigo");
+const seccionMensajes = document.getElementById("mensajePrincipal");
+const ataqueJugadorUno = document.getElementById('ataqueJugador');
+const ataqueEnemigoUno = document.getElementById('ataqueEnemigo');
+const nuevoAtaqueJugador = document.createElement('p');
+const nuevoAtaqueEnemigo= document.createElement('p');
+
 let ataqueJugador;
 let ataqueEnemigo;
-
 let ataqueJugadorNumero; // Ataque del jugador en números
-let ataqueAleatorio; // Ataque del enemigo en números
-
 let vidas; // Conteo de vidas
 let vidasEnemigo; // Conteo vidas enemigo
+
+let corazonesJugador = "";
+let corazonesEnemigo = "";
 
 // Aca tenemos el código de los botones del juego, sus escuchadores
 
 function iniciarJuego() {
-
   // LLamamos la sección de ataque y con el atributo de style dysplay lo dejamos en none para cambiar su predeterminado de mostrarse
-  let divBatlla = document.getElementById("seleccionarAtaque");
   divBatlla.style.display = 'none';
-
-
-  let botonDeReiniciar = document.getElementById("botonReiniciar");
   botonDeReiniciar.style.display = 'none';
-
-  let sectionReglasJuego = document.getElementById("reglasJuego");
   sectionReglasJuego.style.display = 'none';
-
-  let sectionMensajes = document.getElementById("mensajes");
   sectionMensajes.style.display = 'none';
-
   // Traemos del DOM -> monsterDuel.html la etiqueta con id "botonMascotas" y la guardamos en una variable que estaremos escuchando el evento click para iniciar la función seleccionarMascotaJugador
-  let botonMascotaJugador = document.getElementById("botonMascotas");
   botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
-
-  let botonAguaJugador = document.getElementById("botonAgua");
   botonAguaJugador.addEventListener("click", ataqueAgua);
-
-  let botonTierraJugador = document.getElementById("botonTierra");
   botonTierraJugador.addEventListener("click", ataqueTierra);
-
-  let botonFuegoJugador = document.getElementById("botonFuego");
   botonFuegoJugador.addEventListener("click", ataqueFuego);
-
-  let botonElectricidadJugador = document.getElementById("botonElectricidad");
   botonElectricidadJugador.addEventListener("click", ataqueElectricidad);
-
-  let botonAireJugador = document.getElementById("botonAire");
   botonAireJugador.addEventListener("click", ataqueAire);
-
-  let botonReiniciar = document.getElementById("botonReiniciar");
   botonReiniciar.addEventListener("click", reiniciarJuego);
-
 }
 
 function seleccionarMascotaJugador() {
-  let inputSquirtle = document.getElementById("squirtle");
-  let inputBulbasor = document.getElementById("bulbasor");
-  let inputCharmander = document.getElementById("charmander");
-  let inputDragonGyradous = document.getElementById("dragonGyradous");
-  let inputDragonPegassi = document.getElementById("dragonPegassi");
-  let inputDragonSkull = document.getElementById("dragonSkull");
-  let spanMascotaJugador = document.getElementById("mascotaJugador");
-  let spanvidaJugador = document.getElementById("vidaJugador");
+
 
   if (inputSquirtle.checked) {
     vidas = 8;
-    // spanMascotaJugador.appendChild(document.createElement('img')).src = '../img/mascotas/squirtle.jpg';
-    // spanMascotaJugador.innerHTML = "Squirtle 🐳";
-    spanMascotaJugador.innerHTML = "<img src='../img/mascotas/squirtle.jpg' width='16' height='16'>";
-    spanvidaJugador.innerHTML = vidas;
+    document.getElementById("mascotaJugador").innerHTML = "<img src='../src/img/mascotas/squirtle.jpg' width='16' height='16'>";
+    for (let i = 0; i < vidas; i++) {corazonesJugador += "💙";}
+    spanvidaJugador.innerHTML = corazonesJugador;
   } else if (inputBulbasor.checked) {
     vidas = 6;
-    spanMascotaJugador.innerHTML = "Bulbasor 🐊";
-    spanvidaJugador.innerHTML = vidas;
+    document.getElementById("mascotaJugador").innerHTML = "<img src='../src/img/mascotas/bulbasor.jpg' width='16' height='16'>";
+    for (let i = 0; i < vidas; i++) {corazonesJugador += "💙";}
+    spanvidaJugador.innerHTML = corazonesJugador;
   } else if (inputCharmander.checked) {
     vidas = 4;
-    spanMascotaJugador.innerHTML = "Charmander 🐯";
-    spanvidaJugador.innerHTML = vidas;
+    document.getElementById("mascotaJugador").innerHTML = "<img src='../src/img/mascotas/charmander.gif' width='16' height='16'>";
+    for (let i = 0; i < vidas; i++) {corazonesJugador += "💙";}
+    spanvidaJugador.innerHTML = corazonesJugador;
   } else if (inputDragonGyradous.checked) {
     vidas = 3;
-    spanMascotaJugador.innerHTML = "Dragon Gyradous 🐙";
-    spanvidaJugador.innerHTML = vidas;
+    document.getElementById("mascotaJugador").innerHTML = "<img src='../src/img/mascotas/gyradous.png' width='16' height='16'>";
+    for (let i = 0; i < vidas; i++) {corazonesJugador += "💙";}
+    spanvidaJugador.innerHTML = corazonesJugador;
   } else if (inputDragonPegassi.checked) {
     vidas = 2;
-    spanvidaJugador.innerHTML = vidas;
-    spanMascotaJugador.innerHTML = "Dragon Pegassi 🐉";
+    document.getElementById("mascotaJugador").innerHTML = "<img src='../src/img/mascotas/pegassi.gif' width='16' height='16'>";
+    for (let i = 0; i < vidas; i++) {corazonesJugador += "💙";}
+    spanvidaJugador.innerHTML = corazonesJugador;
   } else if (inputDragonSkull.checked) {
-    spanMascotaJugador.innerHTML = "Dragon Skull 🦂";
     vidas = 1;
-    spanvidaJugador.innerHTML = vidas;
+    document.getElementById("mascotaJugador").innerHTML = "<img src='../src/img/mascotas/cubone.png' width='16' height='16'>";
+    for (let i = 0; i < vidas; i++) {corazonesJugador += "💙";}
+    spanvidaJugador.innerHTML = corazonesJugador;
   } else {
     alert("Selecciona una mascota");
   }
 
-  let divMascota = document.getElementById("seleccionarMascota");
+  
   divMascota.style.display = 'none';
 
-  let divBatlla = document.getElementById("seleccionarAtaque");
+  
   divBatlla.style.display = 'grid';
 
   seleccionarMascotaEnemigo();
@@ -129,8 +129,8 @@ function ataqueAire() {
 }
 
 function ataqueAleatorioEnemigo() {
-  ataqueAleatorio = aleatorio(1, 5);
-
+  let ataqueAleatorio = aleatorio(1, 6);
+  
   if (ataqueAleatorio == 1) {
     ataqueEnemigo = "Agua 💧";
   } else if (ataqueAleatorio == 2) {
@@ -143,12 +143,12 @@ function ataqueAleatorioEnemigo() {
     ataqueEnemigo = "Aire ☁️";
   }
 
-  batalla();
+  batalla(ataqueAleatorio);
 }
 
-function batalla() {
-  let spanvidaEnemigo = document.getElementById("vidaEnemigo");
-  let spanvidaJugador = document.getElementById("vidaJugador");
+function batalla(ataqueAleatorio) {
+  let corazonesJugador = "";
+  let corazonesEnemigo = "";
 
   if (ataqueJugadorNumero == ataqueAleatorio) {
     crearMensaje("EMPATADOS 🫱🏼‍🫲🏼");
@@ -166,13 +166,13 @@ function batalla() {
   ) {
     crearMensaje("You Win 💯");
     vidasEnemigo = vidasEnemigo - 1;
-    spanvidaEnemigo.innerHTML = vidasEnemigo;
+    for (let i = 0; i < vidasEnemigo; i++) {corazonesEnemigo += "💙";}
+    spanvidaEnemigo.innerHTML = corazonesEnemigo;
   } else {
     crearMensaje("PERDISTE 😣");
     vidas = vidas - 1;
-    spanvidaJugador.innerHTML = vidas;
-    //puntajePC ++;
-    // count ++;
+    for (let i = 0; i < vidas; i++) {corazonesJugador += "💙";}
+    spanvidaJugador.innerHTML = corazonesJugador;
   }
 
   // Revisamos nuestras vidas con la función
@@ -182,48 +182,45 @@ function batalla() {
 
 function seleccionarMascotaEnemigo() {
   // Creamos un numero aleatorio entre el 1 y 3 siendo las 3 opciones aun contempladas en el juego
-  let spanMascotaEnemigo = document.getElementById("mascotaEnemigo");
-  let spanvidaEnemigo = document.getElementById("vidaEnemigo");
   let mascotaAleatorio = aleatorio(1, 6);
  // Verificamos la eleccion al azar de la mascota del enemigo y con el atributo innerHTML vamos a remplazar el contenido de ese objeto por lo que le pasemos
   if (mascotaAleatorio == 1) {
     vidasEnemigo = 8;
-    spanvidaEnemigo.innerHTML = vidasEnemigo;
-    spanMascotaEnemigo.innerHTML = "Squirtle 🐳";
+    for (let i = 0; i < vidasEnemigo; i++) {corazonesEnemigo += "💙";}
+    spanvidaEnemigo.innerHTML = corazonesEnemigo;
+    spanMascotaEnemigo.innerHTML = "<img src='../src/img/mascotas/squirtle.jpg' width='16' height='16'>";
   } else if (mascotaAleatorio == 2) {
     vidasEnemigo = 6;
-    spanvidaEnemigo.innerHTML = vidasEnemigo;
-    spanMascotaEnemigo.innerHTML = "Bulbasor 🐊";
+    for (let i = 0; i < vidasEnemigo; i++) {corazonesEnemigo += "💙";}
+    spanvidaEnemigo.innerHTML = corazonesEnemigo;
+    spanMascotaEnemigo.innerHTML = "<img src='../src/img/mascotas/bulbasor.jpg' width='16' height='16'>";
   } else if (mascotaAleatorio == 3) {
     vidasEnemigo = 4;
-    spanvidaEnemigo.innerHTML = vidasEnemigo;
-    spanMascotaEnemigo.innerHTML = "Charmander 🐯"; 
+    for (let i = 0; i < vidasEnemigo; i++) {corazonesEnemigo += "💙";}
+    spanvidaEnemigo.innerHTML = corazonesEnemigo;
+    spanMascotaEnemigo.innerHTML = "<img src='../src/img/mascotas/charmander.gif' width='16' height='16'>"; 
   } else if (mascotaAleatorio == 4) {
     vidasEnemigo = 3;
-    spanvidaEnemigo.innerHTML = vidasEnemigo;
-    spanMascotaEnemigo.innerHTML = "Dragon Gyradous 🐙";
+    for (let i = 0; i < vidasEnemigo; i++) {corazonesEnemigo += "💙";}
+    spanvidaEnemigo.innerHTML = corazonesEnemigo;
+    spanMascotaEnemigo.innerHTML = "<img src='../src/img/mascotas/gyradous.png' width='16' height='16'>";
   } else if (mascotaAleatorio == 5) {
     vidasEnemigo = 2;
-    spanvidaEnemigo.innerHTML = vidasEnemigo;
-    spanMascotaEnemigo.innerHTML = "Dragon Pegassi 🐉";
+    for (let i = 0; i < vidasEnemigo; i++) {corazonesEnemigo += "💙";}
+    spanvidaEnemigo.innerHTML = corazonesEnemigo;
+    spanMascotaEnemigo.innerHTML = "<img src='../src/img/mascotas/pegassi.gif' width='16' height='16'>";
   } else if (mascotaAleatorio == 6) {
     vidasEnemigo = 1;
-    spanvidaEnemigo.innerHTML = vidasEnemigo;
-    spanMascotaEnemigo.innerHTML = "Dragon Skull 🦂";
+    for (let i = 0; i < vidasEnemigo; i++) {corazonesEnemigo += "💙";}
+    spanvidaEnemigo.innerHTML = corazonesEnemigo;
+    spanMascotaEnemigo.innerHTML = "<img src='../src/img/mascotas/cubone.png' width='16' height='16'>";
   }
 
-  let sectionMensajes = document.getElementById("mensajes");
   sectionMensajes.style.display = 'flex';
 }
 
 function crearMensaje(resutadoGlobal) {
-  let seccionMensajes = document.getElementById("mensajePrincipal");
 
-  let ataqueJugadorUno = document.getElementById('ataqueJugador');
-  let ataqueEnemigoUno = document.getElementById('ataqueEnemigo');
-
-  let nuevoAtaqueJugador = document.createElement('p');
-  let nuevoAtaqueEnemigo= document.createElement('p');
 
 
   seccionMensajes.innerHTML = resutadoGlobal
@@ -247,26 +244,26 @@ function crearMensaje(resutadoGlobal) {
 }
 
 function crearMensajeFinal(resutadoGlobalFinal) {
-  let seccionMensajes = document.getElementById("mensajePrincipal");
+
 
   seccionMensajes.innerHTML = resutadoGlobalFinal;
 
-  let botonAguaJugador = document.getElementById("botonAgua");
+
   botonAguaJugador.disabled = true;
 
-  let botonTierraJugador = document.getElementById("botonTierra");
+
   botonTierraJugador.disabled = true;
 
-  let botonFuegoJugador = document.getElementById("botonFuego");
+
   botonFuegoJugador.disabled = true;
 
-  let botonElectricidadJugador = document.getElementById("botonElectricidad");
+
   botonElectricidadJugador.disabled = true;
 
-  let botonAireJugador = document.getElementById("botonAire");
+
   botonAireJugador.disabled = true;
 
-  let botonDeReiniciar = document.getElementById("botonReiniciar");
+
   botonDeReiniciar.style.display = 'flex';
 }
 

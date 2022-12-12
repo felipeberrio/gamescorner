@@ -81,13 +81,6 @@ input{
 
 }
 
-@media (max-width: 600px){
-    .tarjetasMascotas, .tarjetasAtaque{
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
 
 
 .tarjetaMascotaIndividual {
@@ -113,6 +106,14 @@ input:checked + label img{
 
 }
 
+#batalla-frame{
+    display: flex;
+    justify-content: space-around   ;
+    align-items: center;
+    margin: 50px;
+}
+
+
 /* Sección seleccionar Ataque Div */
 #seleccionarAtaque {
     margin: 50px;
@@ -122,11 +123,19 @@ input:checked + label img{
 }
 
 #mensajes {
-    background-image: radial-gradient(circle at 50% -20.71%, #ade5ff 0, #7dcefb 25%, #3cb5f2 50%, #009ce9 75%, #0085e0 100%);
-    opacity: 70%;
     font-size: 8px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+#mensajePrincipal{
+    background-color:#cccccc;
+    border-radius: 20px;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -144,9 +153,10 @@ input:checked + label img{
 
 .seccionAtaques {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    width: 500px;
+    justify-content: space-between;
 }
-
 
 .btn-borde {
     padding: .375rem .75rem;
@@ -229,3 +239,17 @@ input:checked + label img{
     background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f0a100),to(#f70));
     background-image: linear-gradient(#f0a100 10%,#f70 100%);
   }
+
+  @media (max-width: 600px){
+    .tarjetasMascotas, .tarjetasAtaque{
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .seccionAtaques{
+
+        width: 50px;
+        justify-content: center;
+    }
+
+}
