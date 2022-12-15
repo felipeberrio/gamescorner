@@ -23,7 +23,8 @@ const seccionMensajes = document.getElementById("mensajePrincipal");
 const ataqueJugadorUno = document.getElementById('ataqueJugador');
 const ataqueEnemigoUno = document.getElementById('ataqueEnemigo');
 const nuevoAtaqueJugador = document.createElement('p');
-const nuevoAtaqueEnemigo= document.createElement('p');
+const nuevoAtaqueEnemigo = document.createElement('p');
+const contenedorTarjetas = document.getElementById('contenedorTarjetas');
 
 let ataqueJugador;
 let ataqueEnemigo;
@@ -33,6 +34,69 @@ let vidasEnemigo; // Conteo vidas enemigo
 
 let corazonesJugador = "";
 let corazonesEnemigo = "";
+
+let mokepones = []
+
+let opcionDeMokepones
+
+
+
+class Mokepon{
+  constructor(nombre, foto, vida){
+    this.nombre = nombre;
+    this.foto = foto;
+    this.vida = vida;
+    this.ataques = [];
+  }
+}
+
+let squirtle = new Mokepon('Squirtle','../src/img/mascotas/squirtle.jpg','8')
+let bulbasor = new Mokepon('Bulbasor','../src/img/mascotas/bulbasor.jpg','6')
+let charmander = new Mokepon('Charmander','../src/img/mascotas/charmander.gif','4')
+let gyradous = new Mokepon('Gyradous','../src/img/mascotas/gyradous.png','3')
+let pegassi = new Mokepon('Pegassi','../src/img/mascotas/pegassi.gif','2')
+let cubone = new Mokepon('Cubone','../src/img/mascotas/cubone.png','1')
+
+squirtle.ataques.push(
+  {nombre:'Agua 💧', id:'botonAgua'},
+  {nombre:'Tierra 🌱', id:'botonTierra'},
+  {nombre:'Aire ☁️', id:'botonAire'}
+)
+bulbasor.ataques.push(
+  {nombre:'Electricidad ⚡', id:'botonElectricidad'},
+  {nombre:'Tierra 🌱', id:'botonTierra'},
+  {nombre:'Aire ☁️', id:'botonAire'}
+)
+charmander.ataques.push(
+  {nombre:'Fuego 🔥', id:'botonFuego'},
+  {nombre:'Tierra 🌱', id:'botonTierra'},
+  {nombre:'Electricidad ⚡', id:'botonElectricidad'}
+)
+pegassi.ataques.push(
+  {nombre:'Fuego 🔥', id:'botonFuego'},
+  {nombre:'Aire ☁️', id:'botonAire'},
+  {nombre:'Agua 💧', id:'botonAgua'}
+)
+cubone.ataques.push(
+  {nombre:'Fuego 🔥', id:'botonFuego'},
+  {nombre:'Agua 💧', id:'botonAgua'},
+  {nombre:'Electricidad ⚡', id:'botonElectricidad'}
+)
+
+mokepones.push(squirtle,bulbasor,charmander,gyradous,pegassi,cubone)
+
+mokepones.forEach((mokepon) => {
+  opcionDeMokepones = `
+  <input type="radio" name="mascota" id=${mokepon.nombre} />
+  <label class="tarjetasMascotas" for=${mokepon.nombre}>
+      <p>${mokepon.nombre}</p>
+      <img src=${mokepon.foto} alt=${mokepon.nombre}>
+  </label>
+  `
+  contenedorTarjetas.innerHTML += opcionDeMokepones
+})
+
+
 
 // Aca tenemos el código de los botones del juego, sus escuchadores
 
