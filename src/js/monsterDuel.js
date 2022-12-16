@@ -103,9 +103,9 @@ function iniciarJuego() {
   mokepones.forEach((mokepon) => {
     opcionDeMokepones = `
     <input type="radio" name="mascota" id=${mokepon.nombre} />
-    <label class="tarjetasMascotas" for=${mokepon.nombre}>
+    <label class="tarjetasMascotasIndividual" for=${mokepon.nombre}>
         <p>${mokepon.nombre}</p>
-        <img src=${mokepon.foto} alt=${mokepon.nombre}>
+        <img class="imagenMascota" src=${mokepon.foto} alt=${mokepon.nombre}>
     </label>
     `
     contenedorTarjetas.innerHTML += opcionDeMokepones
@@ -164,6 +164,9 @@ function seleccionarMascotaJugador() {
   } else {
     alert("Selecciona una mascota");
   }
+
+  var imagenGuerrero = document.getElementById("mascotaJugador").querySelector("img");
+  imagenGuerrero.style.borderRadius = "20px";
 
   
   divMascota.style.display = 'none';
@@ -291,6 +294,9 @@ function seleccionarMascotaEnemigo() {
     spanvidaEnemigo.innerHTML = corazonesEnemigo;
     spanMascotaEnemigo.innerHTML = "<img src='../src/img/mascotas/cubone.png' width='16' height='16'>";
   }
+
+  var imagenContrincante = document.getElementById("mascotaEnemigo").querySelector("img");
+  imagenContrincante.style.borderRadius = "20px";
 
   sectionMensajes.style.display = 'flex';
 }

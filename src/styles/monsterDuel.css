@@ -25,6 +25,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* flex-wrap: wrap; */
 }
 
 
@@ -58,14 +59,13 @@ section {
 /* Sección seleccionar Mascota Div */
 #seleccionarMascota {
     margin: 50px;
-    width: 300px;
+    width: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-image: url("../img/fondo.jpg");
     background-color: #cccccc;
-    opacity: 80%;
     background-repeat:calc();
 }
 
@@ -83,7 +83,7 @@ input{
 
 
 .tarjetasMascotas {
-    border: solid 2px #282ea8;
+    /* border: solid 2px #282ea8; */
     background-clip: content-box; /* support: IE9+ */
     /* width: 180px;
     height: 100px; */
@@ -99,9 +99,21 @@ input{
     color: white;
 }
 
+.tarjetasMascotasIndividual{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
 .imagenMascota{
-    width: 70%;
+    width: auto;
     filter: sepia(1) opacity(75%);
+    border-radius: 20px;
+}
+
+.imagenMascotaGuerrera{
+    filter: sepia(1) opacity(75%);
+    border-radius: 20px;
 }
 
 /* Se utiliza cuando el input este checked, un selector de CSS de mismo nivel de jerarquia inmediato hermano */
@@ -121,7 +133,8 @@ input:checked + label img{
 /* Sección seleccionar Ataque Div */
 #seleccionarAtaque {
     margin: 50px;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(195, 195, 195, 0.5));
+    background-image: url("../img/fondo.jpg");
+    background-color: #cccccc;
     text-align: center;
 
 }
