@@ -9,12 +9,7 @@ const botonFuegoJugador = document.getElementById("botonFuego");
 const botonElectricidadJugador = document.getElementById("botonElectricidad");
 const botonAireJugador = document.getElementById("botonAire");
 const botonReiniciar = document.getElementById("botonReiniciar");
-const inputSquirtle = document.getElementById("squirtle");
-const inputBulbasor = document.getElementById("bulbasor");
-const inputCharmander = document.getElementById("charmander");
-const inputDragonGyradous = document.getElementById("dragonGyradous");
-const inputDragonPegassi = document.getElementById("dragonPegassi");
-const inputDragonSkull = document.getElementById("dragonSkull");
+
 const spanvidaJugador = document.getElementById("vidaJugador");
 const spanvidaEnemigo = document.getElementById("vidaEnemigo");
 const divMascota = document.getElementById("seleccionarMascota");
@@ -31,6 +26,13 @@ let ataqueEnemigo;
 let ataqueJugadorNumero; // Ataque del jugador en números
 let vidas; // Conteo de vidas
 let vidasEnemigo; // Conteo vidas enemigo
+
+let inputSquirtle
+let inputBulbasor
+let inputCharmander
+let inputDragonGyradous
+let inputDragonPegassi
+let inputDragonSkull
 
 let corazonesJugador = "";
 let corazonesEnemigo = "";
@@ -85,16 +87,7 @@ cubone.ataques.push(
 
 mokepones.push(squirtle,bulbasor,charmander,gyradous,pegassi,cubone)
 
-mokepones.forEach((mokepon) => {
-  opcionDeMokepones = `
-  <input type="radio" name="mascota" id=${mokepon.nombre} />
-  <label class="tarjetasMascotas" for=${mokepon.nombre}>
-      <p>${mokepon.nombre}</p>
-      <img src=${mokepon.foto} alt=${mokepon.nombre}>
-  </label>
-  `
-  contenedorTarjetas.innerHTML += opcionDeMokepones
-})
+
 
 
 
@@ -106,6 +99,25 @@ function iniciarJuego() {
   botonDeReiniciar.style.display = 'none';
   sectionReglasJuego.style.display = 'none';
   sectionMensajes.style.display = 'none';
+
+  mokepones.forEach((mokepon) => {
+    opcionDeMokepones = `
+    <input type="radio" name="mascota" id=${mokepon.nombre} />
+    <label class="tarjetasMascotas" for=${mokepon.nombre}>
+        <p>${mokepon.nombre}</p>
+        <img src=${mokepon.foto} alt=${mokepon.nombre}>
+    </label>
+    `
+    contenedorTarjetas.innerHTML += opcionDeMokepones
+  })
+
+  inputSquirtle = document.getElementById("Squirtle");
+  inputBulbasor = document.getElementById("Bulbasor");
+  inputCharmander = document.getElementById("Charmander");
+  inputDragonGyradous = document.getElementById("Gyradous");
+  inputDragonPegassi = document.getElementById("Pegassi");
+  inputDragonSkull = document.getElementById("Cubone");
+
   // Traemos del DOM -> monsterDuel.html la etiqueta con id "botonMascotas" y la guardamos en una variable que estaremos escuchando el evento click para iniciar la función seleccionarMascotaJugador
   botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
   botonAguaJugador.addEventListener("click", ataqueAgua);

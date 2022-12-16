@@ -11,8 +11,8 @@ src: url(../pokemonFont/pokemonInterface.ttf);
 }
 
 body {
-    background-image: url("../img/fondo.jpg");
-    background-color: #cccccc;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(49,121,9,1) 44%, rgba(87,255,0,1) 100%);
     background-size: auto;
     margin: 0px;
 }
@@ -21,6 +21,10 @@ body {
 
 #mainContainer{
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -54,12 +58,14 @@ section {
 /* Sección seleccionar Mascota Div */
 #seleccionarMascota {
     margin: 50px;
-    width: auto;
+    width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(195, 195, 195, 0.5));
+    background-image: url("../img/fondo.jpg");
+    background-color: #cccccc;
+    opacity: 80%;
     background-repeat:calc();
 }
 
@@ -87,7 +93,7 @@ input{
     box-sizing: border-box;
     border-radius: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     color: white;
