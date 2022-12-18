@@ -112,7 +112,6 @@ input{
 }
 
 .imagenMascotaGuerrera{
-    filter: sepia(1) opacity(75%);
     border-radius: 20px;
 }
 

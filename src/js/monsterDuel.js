@@ -134,31 +134,73 @@ function seleccionarMascotaJugador() {
   if (inputSquirtle.checked) {
     vidas = 8;
     document.getElementById("mascotaJugador").innerHTML = "<img src='../src/img/mascotas/squirtle.jpg' width='16' height='16'>";
+      // Crea un elemento de texto y establece su contenido
+      let nombreJugador = document.createTextNode(inputSquirtle.id);
+      // Crea un elemento p y agrega el texto como hijo
+      let p = document.createElement("p");
+      p.appendChild(nombreJugador);
+      // Agrega el elemento p al elemento con id "mascotaJugador"
+      document.getElementById("mascotaJugador").appendChild(p);
     for (let i = 0; i < vidas; i++) {corazonesJugador += "💙";}
     spanvidaJugador.innerHTML = corazonesJugador;
   } else if (inputBulbasor.checked) {
     vidas = 6;
     document.getElementById("mascotaJugador").innerHTML = "<img src='../src/img/mascotas/bulbasor.jpg' width='16' height='16'>";
+      // Crea un elemento de texto y establece su contenido
+      let nombreJugador = document.createTextNode(inputBulbasor.id);
+      // Crea un elemento p y agrega el texto como hijo
+      let p = document.createElement("p");
+      p.appendChild(nombreJugador);
+      // Agrega el elemento p al elemento con id "mascotaJugador"
+      document.getElementById("mascotaJugador").appendChild(p);
     for (let i = 0; i < vidas; i++) {corazonesJugador += "💙";}
     spanvidaJugador.innerHTML = corazonesJugador;
   } else if (inputCharmander.checked) {
     vidas = 4;
     document.getElementById("mascotaJugador").innerHTML = "<img src='../src/img/mascotas/charmander.gif' width='16' height='16'>";
+      // Crea un elemento de texto y establece su contenido
+      let nombreJugador = document.createTextNode(inputCharmander.id);
+      // Crea un elemento p y agrega el texto como hijo
+      let p = document.createElement("p");
+      p.appendChild(nombreJugador);
+      // Agrega el elemento p al elemento con id "mascotaJugador"
+      document.getElementById("mascotaJugador").appendChild(p);
     for (let i = 0; i < vidas; i++) {corazonesJugador += "💙";}
     spanvidaJugador.innerHTML = corazonesJugador;
   } else if (inputDragonGyradous.checked) {
     vidas = 3;
     document.getElementById("mascotaJugador").innerHTML = "<img src='../src/img/mascotas/gyradous.png' width='16' height='16'>";
+      // Crea un elemento de texto y establece su contenido
+      let nombreJugador = document.createTextNode(inputDragonGyradous.id);
+      // Crea un elemento p y agrega el texto como hijo
+      let p = document.createElement("p");
+      p.appendChild(nombreJugador);
+      // Agrega el elemento p al elemento con id "mascotaJugador"
+      document.getElementById("mascotaJugador").appendChild(p);
     for (let i = 0; i < vidas; i++) {corazonesJugador += "💙";}
     spanvidaJugador.innerHTML = corazonesJugador;
   } else if (inputDragonPegassi.checked) {
     vidas = 2;
     document.getElementById("mascotaJugador").innerHTML = "<img src='../src/img/mascotas/pegassi.gif' width='16' height='16'>";
+      // Crea un elemento de texto y establece su contenido
+      let nombreJugador = document.createTextNode(inputDragonPegassi.id);
+      // Crea un elemento p y agrega el texto como hijo
+      let p = document.createElement("p");
+      p.appendChild(nombreJugador);
+      // Agrega el elemento p al elemento con id "mascotaJugador"
+      document.getElementById("mascotaJugador").appendChild(p);
     for (let i = 0; i < vidas; i++) {corazonesJugador += "💙";}
     spanvidaJugador.innerHTML = corazonesJugador;
   } else if (inputDragonSkull.checked) {
     vidas = 1;
     document.getElementById("mascotaJugador").innerHTML = "<img src='../src/img/mascotas/cubone.png' width='16' height='16'>";
+        // Crea un elemento de texto y establece su contenido
+        let nombreJugador = document.createTextNode(inputDragonSkull.id);
+        // Crea un elemento p y agrega el texto como hijo
+        let p = document.createElement("p");
+        p.appendChild(nombreJugador);
+        // Agrega el elemento p al elemento con id "mascotaJugador"
+        document.getElementById("mascotaJugador").appendChild(p);
     for (let i = 0; i < vidas; i++) {corazonesJugador += "💙";}
     spanvidaJugador.innerHTML = corazonesJugador;
   } else {
