@@ -26,6 +26,8 @@ let ataqueEnemigo;
 let ataqueJugadorNumero; // Ataque del jugador en números
 let vidas; // Conteo de vidas
 let vidasEnemigo; // Conteo vidas enemigo
+let mascotaAleatorio
+
 
 let inputSquirtle
 let inputBulbasor
@@ -58,6 +60,7 @@ let charmander = new Mokepon('Charmander','../src/img/mascotas/charmander.gif','
 let gyradous = new Mokepon('Gyradous','../src/img/mascotas/gyradous.png','3')
 let pegassi = new Mokepon('Pegassi','../src/img/mascotas/pegassi.gif','2')
 let cubone = new Mokepon('Cubone','../src/img/mascotas/cubone.png','1')
+
 
 squirtle.ataques.push(
   {nombre:'Agua 💧', id:'botonAgua'},
@@ -304,84 +307,21 @@ function batalla(ataqueAleatorio) {
 function seleccionarMascotaEnemigo() {
   // Creamos un numero aleatorio entre el 1 y 3 siendo las 3 opciones aun contempladas en el juego
   // El aleatorio ahora va de 0 a la longitud que tenemos de mokepones - 1 porque empieza el conteo desde 0
-  let mascotaAleatorio = aleatorio(0, mokepones.length - 1);
+  mascotaAleatorio = aleatorio(0, mokepones.length - 1);
 
-  spanMascotaEnemigo = mokepones[mascotaAleatorio]
- // Verificamos la eleccion al azar de la mascota del enemigo y con el atributo innerHTML vamos a remplazar el contenido de ese objeto por lo que le pasemos
-  if (mascotaAleatorio == 1) {
-    vidasEnemigo = 8;
-    for (let i = 0; i < vidasEnemigo; i++) {corazonesEnemigo += "💙";}
+  spanMascotaEnemigo.innerHTML = `<img src='${mokepones[mascotaAleatorio].foto}' width='16' height='16'>`;
+  
+  let nombreEnemigo = document.createElement("p");
+  nombreEnemigo.textContent = mokepones[mascotaAleatorio].nombre
+  spanMascotaEnemigo.appendChild(nombreEnemigo);
+  
+  
+  
+  vidasEnemigo = mokepones[mascotaAleatorio].vida
+  for (let i = 0; i < vidasEnemigo; i++) {corazonesEnemigo += "💙";}
     spanvidaEnemigo.innerHTML = corazonesEnemigo;
-    spanMascotaEnemigo.innerHTML = "<img src='../src/img/mascotas/squirtle.jpg' width='16' height='16'>";
-    // Crea un elemento de texto y establece su contenido
-    let nombreEnemigo = document.createTextNode(spanMascotaEnemigo.id);
-    // Crea un elemento p y agrega el texto como hijo
-    let p = document.createElement("p");
-    p.appendChild(nombreEnemigo);
-    // Agrega el elemento p al elemento con id "mascotaJugador"
-    document.getElementById("spanMascotaEnemigo").appendChild(p);
-  } else if (mascotaAleatorio == 2) {
-    vidasEnemigo = 6;
-    for (let i = 0; i < vidasEnemigo; i++) {corazonesEnemigo += "💙";}
-    spanvidaEnemigo.innerHTML = corazonesEnemigo;
-    spanMascotaEnemigo.innerHTML = "<img src='../src/img/mascotas/bulbasor.jpg' width='16' height='16'>";
-        // Crea un elemento de texto y establece su contenido
-        let nombreEnemigo = document.createTextNode(spanMascotaEnemigo.id);
-        // Crea un elemento p y agrega el texto como hijo
-        let p = document.createElement("p");
-        p.appendChild(nombreEnemigo);
-        // Agrega el elemento p al elemento con id "mascotaJugador"
-        document.getElementById("spanMascotaEnemigo").appendChild(p);
-  } else if (mascotaAleatorio == 3) {
-    vidasEnemigo = 4;
-    for (let i = 0; i < vidasEnemigo; i++) {corazonesEnemigo += "💙";}
-    spanvidaEnemigo.innerHTML = corazonesEnemigo;
-    spanMascotaEnemigo.innerHTML = "<img src='../src/img/mascotas/charmander.gif' width='16' height='16'>"; 
-        // Crea un elemento de texto y establece su contenido
-        let nombreEnemigo = document.createTextNode(spanMascotaEnemigo.id);
-        // Crea un elemento p y agrega el texto como hijo
-        let p = document.createElement("p");
-        p.appendChild(nombreEnemigo);
-        // Agrega el elemento p al elemento con id "mascotaJugador"
-        document.getElementById("spanMascotaEnemigo").appendChild(p);
-  } else if (mascotaAleatorio == 4) {
-    vidasEnemigo = 3;
-    for (let i = 0; i < vidasEnemigo; i++) {corazonesEnemigo += "💙";}
-    spanvidaEnemigo.innerHTML = corazonesEnemigo;
-    spanMascotaEnemigo.innerHTML = "<img src='../src/img/mascotas/gyradous.png' width='16' height='16'>";
-        // Crea un elemento de texto y establece su contenido
-        let nombreEnemigo = document.createTextNode(spanMascotaEnemigo.id);
-        // Crea un elemento p y agrega el texto como hijo
-        let p = document.createElement("p");
-        p.appendChild(nombreEnemigo);
-        // Agrega el elemento p al elemento con id "mascotaJugador"
-        document.getElementById("spanMascotaEnemigo").appendChild(p);
-  } else if (mascotaAleatorio == 5) {
-    vidasEnemigo = 2;
-    for (let i = 0; i < vidasEnemigo; i++) {corazonesEnemigo += "💙";}
-    spanvidaEnemigo.innerHTML = corazonesEnemigo;
-    spanMascotaEnemigo.innerHTML = "<img src='../src/img/mascotas/pegassi.gif' width='16' height='16'>";
-        // Crea un elemento de texto y establece su contenido
-        let nombreEnemigo = document.createTextNode(spanMascotaEnemigo.id);
-        // Crea un elemento p y agrega el texto como hijo
-        let p = document.createElement("p");
-        p.appendChild(nombreEnemigo);
-        // Agrega el elemento p al elemento con id "mascotaJugador"
-        document.getElementById("spanMascotaEnemigo").appendChild(p);
-  } else if (mascotaAleatorio == 6) {
-    vidasEnemigo = 1;
-    for (let i = 0; i < vidasEnemigo; i++) {corazonesEnemigo += "💙";}
-    spanvidaEnemigo.innerHTML = corazonesEnemigo;
-    spanMascotaEnemigo.innerHTML = "<img src='../src/img/mascotas/cubone.png' width='16' height='16'>";
-        // Crea un elemento de texto y establece su contenido
-        let nombreEnemigo = document.createTextNode(spanMascotaEnemigo.id);
-        // Crea un elemento p y agrega el texto como hijo
-        let p = document.createElement("p");
-        p.appendChild(nombreEnemigo);
-        // Agrega el elemento p al elemento con id "mascotaJugador"
-        document.getElementById("spanMascotaEnemigo").appendChild(p);
-  }
 
+ 
   var imagenContrincante = document.getElementById("mascotaEnemigo").querySelector("img");
   imagenContrincante.style.borderRadius = "20px";
 
@@ -389,27 +329,12 @@ function seleccionarMascotaEnemigo() {
 }
 
 function crearMensaje(resutadoGlobal) {
-
-
-
   seccionMensajes.innerHTML = resutadoGlobal
   ataqueJugadorUno.innerHTML = ataqueJugador
   ataqueEnemigoUno.innerHTML = ataqueEnemigo
   ataqueJugadorUno.appendChild(nuevoAtaqueJugador)
   ataqueEnemigoUno.appendChild(nuevoAtaqueEnemigo)
 
-
-  // let parrafo = document.createElement("p");
-
-  // parrafo.innerHTML =
-  //   "Tu mascota atacó con " +
-  //   ataqueJugador +
-  //   ", la mascota del enemigo atacó con " +
-  //   ataqueEnemigo +
-  //   " - y el resultado fué: " +
-  //   resutadoGlobal;
-
-  // seccionMensajes.appendChild(parrafo);
 }
 
 function crearMensajeFinal(resutadoGlobalFinal) {
