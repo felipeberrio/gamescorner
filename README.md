@@ -8,3 +8,4 @@
 4. función aleatorio: n = math.floor(math.random() * (max + min + 1) + min)
 
 1 - monsterDuel
+2 - rock,paper,scissors
