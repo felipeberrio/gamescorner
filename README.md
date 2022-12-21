@@ -7,9 +7,4 @@
 3. Math.random() No necesita parametros, genera un valor aleatorio entre 0 a 1
 4. función aleatorio: n = math.floor(math.random() * (max + min + 1) + min)
 
-
-
-
-pokemon interface
-
-pokemon
+1 - monsterDuel
