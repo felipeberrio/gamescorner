@@ -20,10 +20,13 @@ const ataqueEnemigoUno = document.getElementById('ataqueEnemigo');
 const nuevoAtaqueJugador = document.createElement('p');
 const nuevoAtaqueEnemigo = document.createElement('p');
 const contenedorTarjetas = document.getElementById('contenedorTarjetas');
+const contenedorAtaques = document.getElementById('contenedorAtaques')
+
 
 let ataqueJugador;
 let ataqueEnemigo;
 let ataqueJugadorNumero; // Ataque del jugador en números
+let mascotaJugador
 let vidas; // Conteo de vidas
 let vidasEnemigo; // Conteo vidas enemigo
 let mascotaAleatorio
@@ -139,6 +142,7 @@ function seleccionarMascotaJugador() {
     document.getElementById("mascotaJugador").innerHTML = "<img src='../src/img/mascotas/squirtle.jpg' width='16' height='16'>";
       // Crea un elemento de texto y establece su contenido
       let nombreJugador = document.createTextNode(inputSquirtle.id);
+      mascotaJugador = inputSquirtle.id;      
       // Crea un elemento p y agrega el texto como hijo
       let p = document.createElement("p");
       p.appendChild(nombreJugador);
@@ -151,6 +155,7 @@ function seleccionarMascotaJugador() {
     document.getElementById("mascotaJugador").innerHTML = "<img src='../src/img/mascotas/bulbasor.jpg' width='16' height='16'>";
       // Crea un elemento de texto y establece su contenido
       let nombreJugador = document.createTextNode(inputBulbasor.id);
+      mascotaJugador = inputBulbasor.id; 
       // Crea un elemento p y agrega el texto como hijo
       let p = document.createElement("p");
       p.appendChild(nombreJugador);
@@ -163,6 +168,7 @@ function seleccionarMascotaJugador() {
     document.getElementById("mascotaJugador").innerHTML = "<img src='../src/img/mascotas/charmander.gif' width='16' height='16'>";
       // Crea un elemento de texto y establece su contenido
       let nombreJugador = document.createTextNode(inputCharmander.id);
+      mascotaJugador = inputCharmander.id; 
       // Crea un elemento p y agrega el texto como hijo
       let p = document.createElement("p");
       p.appendChild(nombreJugador);
@@ -175,6 +181,7 @@ function seleccionarMascotaJugador() {
     document.getElementById("mascotaJugador").innerHTML = "<img src='../src/img/mascotas/gyradous.png' width='16' height='16'>";
       // Crea un elemento de texto y establece su contenido
       let nombreJugador = document.createTextNode(inputDragonGyradous.id);
+      mascotaJugador = inputDragonGyradous.id; 
       // Crea un elemento p y agrega el texto como hijo
       let p = document.createElement("p");
       p.appendChild(nombreJugador);
@@ -187,6 +194,7 @@ function seleccionarMascotaJugador() {
     document.getElementById("mascotaJugador").innerHTML = "<img src='../src/img/mascotas/pegassi.gif' width='16' height='16'>";
       // Crea un elemento de texto y establece su contenido
       let nombreJugador = document.createTextNode(inputDragonPegassi.id);
+      mascotaJugador = inputDragonPegassi.id; 
       // Crea un elemento p y agrega el texto como hijo
       let p = document.createElement("p");
       p.appendChild(nombreJugador);
@@ -199,6 +207,7 @@ function seleccionarMascotaJugador() {
     document.getElementById("mascotaJugador").innerHTML = "<img src='../src/img/mascotas/cubone.png' width='16' height='16'>";
         // Crea un elemento de texto y establece su contenido
         let nombreJugador = document.createTextNode(inputDragonSkull.id);
+        mascotaJugador = inputDragonSkull.id; 
         // Crea un elemento p y agrega el texto como hijo
         let p = document.createElement("p");
         p.appendChild(nombreJugador);
@@ -219,6 +228,8 @@ function seleccionarMascotaJugador() {
   
   divBatlla.style.display = 'grid';
 
+
+  extraerAtaques(mascotaJugador);
   seleccionarMascotaEnemigo();
 }
 
@@ -302,6 +313,23 @@ function batalla(ataqueAleatorio) {
   // Revisamos nuestras vidas con la función
 
   revisarVidas();
+}
+
+function extraerAtaques(mascotaJugador){
+  let ataques
+  mokepones.forEach((mokepon) => {
+    if (mascotaJugador === mokepon.nombre) {
+      ataques = mokepon.ataques
+    }
+  })
+
+    mostarAtaques(ataques)
+
+
+}
+
+function mostarAtaques(ataques){
+  
 }
 
 function seleccionarMascotaEnemigo() {
