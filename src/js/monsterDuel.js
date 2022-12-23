@@ -20,13 +20,14 @@ const ataqueEnemigoUno = document.getElementById('ataqueEnemigo');
 const nuevoAtaqueJugador = document.createElement('p');
 const nuevoAtaqueEnemigo = document.createElement('p');
 const contenedorTarjetas = document.getElementById('contenedorTarjetas');
-const contenedorAtaques = document.getElementById('contenedorAtaques')
+const contenedorAtaques = document.getElementById('contenedorAtaques');
 
 
 let ataqueJugador;
 let ataqueEnemigo;
 let ataqueJugadorNumero; // Ataque del jugador en números
 let mascotaJugador
+let ataquesMokepon
 let vidas; // Conteo de vidas
 let vidasEnemigo; // Conteo vidas enemigo
 let mascotaAleatorio
