@@ -328,9 +328,30 @@ function extraerAtaques(mascotaJugador){
 
 
 }
-
+ // Renderizado dinamico de ataques
 function mostarAtaques(ataques){
+  ataques.forEach((ataque) => {
+    ataquesMokepon = `
+        <button id=${ataque.id} class="boton-de-ataque">
+            ${ataque.nombre}
+        </button>
+    `;
+    // Renderizamos cada ataque del personaje
+    contenedorAtaques.innerHTML += ataquesMokepon;
+});
+
+// Seleccionar botones luego de crearlos
+botonFuego = document.getElementById('boton-fuego');
+botonAgua = document.getElementById('boton-agua');
+botonTierra = document.getElementById('boton-tierra');
+
+// Agregar evento a los botones
+botonFuego.addEventListener('click', ataqueFuego);
+botonAgua.addEventListener('click', ataqueAgua);
+botonTierra.addEventListener('click', ataqueTierra);
   
+  
+  contenedorAtaques
 }
 
 function seleccionarMascotaEnemigo() {
