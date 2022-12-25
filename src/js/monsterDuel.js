@@ -3,12 +3,14 @@ const botonDeReiniciar = document.getElementById("botonReiniciar");
 const sectionReglasJuego = document.getElementById("reglasJuego");
 const sectionMensajes = document.getElementById("mensajes");
 const botonMascotaJugador = document.getElementById("botonMascotas");
-const botonAguaJugador = document.getElementById("botonAgua");
-const botonTierraJugador = document.getElementById("botonTierra");
-const botonFuegoJugador = document.getElementById("botonFuego");
-const botonElectricidadJugador = document.getElementById("botonElectricidad");
-const botonAireJugador = document.getElementById("botonAire");
+
 const botonReiniciar = document.getElementById("botonReiniciar");
+
+let botonAguaJugador;
+let botonTierraJugador;
+let botonFuegoJugador;
+let botonElectricidadJugador;
+let botonAireJugador;
 
 const spanvidaJugador = document.getElementById("vidaJugador");
 const spanvidaEnemigo = document.getElementById("vidaEnemigo");
@@ -127,11 +129,7 @@ function iniciarJuego() {
 
   // Traemos del DOM -> monsterDuel.html la etiqueta con id "botonMascotas" y la guardamos en una variable que estaremos escuchando el evento click para iniciar la función seleccionarMascotaJugador
   botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
-  botonAguaJugador.addEventListener("click", ataqueAgua);
-  botonTierraJugador.addEventListener("click", ataqueTierra);
-  botonFuegoJugador.addEventListener("click", ataqueFuego);
-  botonElectricidadJugador.addEventListener("click", ataqueElectricidad);
-  botonAireJugador.addEventListener("click", ataqueAire);
+  
   botonReiniciar.addEventListener("click", reiniciarJuego);
 }
 
@@ -340,17 +338,32 @@ function mostarAtaques(ataques){
     contenedorAtaques.innerHTML += ataquesMokepon;
 });
 
+
+
+
 // Seleccionar botones luego de crearlos
-botonFuego = document.getElementById('boton-fuego');
-botonAgua = document.getElementById('boton-agua');
-botonTierra = document.getElementById('boton-tierra');
+
+botonAguaJugador = document.getElementById("botonAgua");
+botonTierraJugador = document.getElementById("botonTierra");
+botonFuegoJugador = document.getElementById("botonFuego");
+botonElectricidadJugador = document.getElementById("botonElectricidad");
+botonAireJugador = document.getElementById("botonAire");
+
+// botonFuego = document.getElementById('boton-fuego');
+// botonAgua = document.getElementById('boton-agua');
+// botonTierra = document.getElementById('boton-tierra');
 
 // Agregar evento a los botones
-botonFuego.addEventListener('click', ataqueFuego);
-botonAgua.addEventListener('click', ataqueAgua);
-botonTierra.addEventListener('click', ataqueTierra);
-  
-  
+// botonFuego.addEventListener('click', ataqueFuego);
+// botonAgua.addEventListener('click', ataqueAgua);
+// botonTierra.addEventListener('click', ataqueTierra);
+
+botonAguaJugador.addEventListener("click", ataqueAgua);
+botonTierraJugador.addEventListener("click", ataqueTierra);
+botonFuegoJugador.addEventListener("click", ataqueFuego);
+botonElectricidadJugador.addEventListener("click", ataqueElectricidad);
+botonAireJugador.addEventListener("click", ataqueAire);
+
   contenedorAtaques
 }
 
