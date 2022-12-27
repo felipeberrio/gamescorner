@@ -83,6 +83,11 @@ charmander.ataques.push(
   {nombre:'Tierra 🌱', id:'botonTierra'},
   {nombre:'Electricidad ⚡', id:'botonElectricidad'}
 )
+gyradous.ataques.push(
+  {nombre:'Agua 💧', id:'botonAgua'},
+  {nombre:'Fuego 🔥', id:'botonFuego'},
+  {nombre:'Tierra 🌱', id:'botonTierra'}
+)
 pegassi.ataques.push(
   {nombre:'Fuego 🔥', id:'botonFuego'},
   {nombre:'Aire ☁️', id:'botonAire'},
@@ -327,45 +332,62 @@ function extraerAtaques(mascotaJugador){
 
 }
  // Renderizado dinamico de ataques
-function mostarAtaques(ataques){
+ function mostarAtaques(ataques) {
+  // Create a container element for the buttons
+  const buttonContainer = document.createElement('div');
+  // Add the buttons to the container
   ataques.forEach((ataque) => {
     ataquesMokepon = `
-        <button id=${ataque.id} class="boton-de-ataque">
+        <button id=${ataque.id} class="btn-borde">
             ${ataque.nombre}
         </button>
     `;
-    // Renderizamos cada ataque del personaje
-    contenedorAtaques.innerHTML += ataquesMokepon;
-});
-
-
+    buttonContainer.innerHTML += ataquesMokepon;
+  });
+  // Add the container element to the DOM
+  contenedorAtaques.appendChild(buttonContainer);
+  // Add a single event listener to the container element
+  buttonContainer.addEventListener('click', (event) => {
+    // Check if the target of the event is a button
+    if (event.target.tagName === 'BUTTON') {
+      // Choose event handler function based on button ID
+      switch (event.target.id) {
+        case 'botonAgua':
+          ataqueAgua();
+          break;
+        case 'botonTierra':
+          ataqueTierra();
+          break;
+        case 'botonFuego':
+          ataqueFuego();
+          break;
+        case 'botonElectricidad':
+          ataqueElectricidad();
+          break;
+        case 'botonAire':
+          ataqueAire();
+          break;
+        default:
+          break;
+      }
+    }
+  });
+}
 
 
 // Seleccionar botones luego de crearlos
+// botonAguaJugador = document.getElementById("botonAgua");
+// botonTierraJugador = document.getElementById("botonTierra");
+// botonFuegoJugador = document.getElementById("botonFuego");
+// botonElectricidadJugador = document.getElementById("botonElectricidad");
+// botonAireJugador = document.getElementById("botonAire");
 
-botonAguaJugador = document.getElementById("botonAgua");
-botonTierraJugador = document.getElementById("botonTierra");
-botonFuegoJugador = document.getElementById("botonFuego");
-botonElectricidadJugador = document.getElementById("botonElectricidad");
-botonAireJugador = document.getElementById("botonAire");
+// botonAguaJugador.addEventListener("click", ataqueAgua);
+// botonTierraJugador.addEventListener("click", ataqueTierra);
+// botonFuegoJugador.addEventListener("click", ataqueFuego);
+// botonElectricidadJugador.addEventListener("click", ataqueElectricidad);
+// botonAireJugador.addEventListener("click", ataqueAire);
 
-// botonFuego = document.getElementById('boton-fuego');
-// botonAgua = document.getElementById('boton-agua');
-// botonTierra = document.getElementById('boton-tierra');
-
-// Agregar evento a los botones
-// botonFuego.addEventListener('click', ataqueFuego);
-// botonAgua.addEventListener('click', ataqueAgua);
-// botonTierra.addEventListener('click', ataqueTierra);
-
-botonAguaJugador.addEventListener("click", ataqueAgua);
-botonTierraJugador.addEventListener("click", ataqueTierra);
-botonFuegoJugador.addEventListener("click", ataqueFuego);
-botonElectricidadJugador.addEventListener("click", ataqueElectricidad);
-botonAireJugador.addEventListener("click", ataqueAire);
-
-  contenedorAtaques
-}
 
 function seleccionarMascotaEnemigo() {
   // Creamos un numero aleatorio entre el 1 y 3 siendo las 3 opciones aun contempladas en el juego
@@ -404,23 +426,6 @@ function crearMensajeFinal(resutadoGlobalFinal) {
 
 
   seccionMensajes.innerHTML = resutadoGlobalFinal;
-
-
-  botonAguaJugador.disabled = true;
-
-
-  botonTierraJugador.disabled = true;
-
-
-  botonFuegoJugador.disabled = true;
-
-
-  botonElectricidadJugador.disabled = true;
-
-
-  botonAireJugador.disabled = true;
-
-
   botonDeReiniciar.style.display = 'flex';
 }
 
