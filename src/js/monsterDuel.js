@@ -429,13 +429,30 @@ function crearMensajeFinal(resutadoGlobalFinal) {
   botonDeReiniciar.style.display = 'flex';
 }
 
+let boton1;
+let boton2;
+let boton3;
+
 function revisarVidas() {
-  if (vidas == 0) {
+  if (vidas === 0) {
     crearMensajeFinal("Lo lamento Perdiste 😔");
-  } else if (vidasEnemigo == 0) {
+    eliminarBotones();
+  } else if (vidasEnemigo === 0) {
     crearMensajeFinal("🎇 Felicidades Ganaste 🍾");
+    eliminarBotones();
   }
 }
+
+function eliminarBotones() {
+  const fin = document.getElementsByClassName('btn-borde')
+  boton1 = fin[0];
+  boton2 = fin[1];
+  boton3 = fin[2];
+  boton1.remove();
+  boton2.remove();
+  boton3.remove();
+}
+
 
 function aleatorio(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
