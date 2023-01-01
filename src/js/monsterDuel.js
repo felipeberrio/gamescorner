@@ -23,6 +23,8 @@ const nuevoAtaqueJugador = document.createElement('p');
 const nuevoAtaqueEnemigo = document.createElement('p');
 const contenedorTarjetas = document.getElementById('contenedorTarjetas');
 const contenedorAtaques = document.getElementById('contenedorAtaques');
+const sectionVerMapa = document.getElementById('verMapa');
+const mapa = document.getElementById('mapa');
 
 
 let ataqueJugador;
@@ -113,6 +115,8 @@ function iniciarJuego() {
   botonDeReiniciar.style.display = 'none';
   sectionReglasJuego.style.display = 'none';
   sectionMensajes.style.display = 'none';
+  sectionVerMapa.style.display = 'flex';
+
 
   mokepones.forEach((mokepon) => {
     opcionDeMokepones = `
