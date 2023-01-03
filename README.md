@@ -9,3 +9,4 @@
 
 1 - monsterDuel
 2 - rock,paper,scissors
+3 - Integramos el mapa de mokepon con canva
